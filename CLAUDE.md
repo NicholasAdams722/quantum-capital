@@ -9,20 +9,26 @@ traces back to something in this document.
 
 ## 1. What This Project Is
 
-**quantumcapital.com** is the conversion layer between a millennial investor who discovers
-Quantum Capital through content and a managed account relationship with Mark Berube.
+**quantumcapital.com** is an educational hub that teaches visitors the investment thesis
+behind The Quantum Letter — and by doing so, builds the trust and understanding that
+eventually leads some of them to work with Mark Berube directly.
 
 The funnel is:
 ```
-X (Twitter) → The Quantum Letter (thequantumletter.com) → quantumcapital.com → Book a Call with Mark
+X (Twitter) → quantumcapital.com (learn the thesis) → The Quantum Letter (subscribe) → Book a Call with Mark
 ```
 
-The website is not a brochure. It is not a blog. It is a precision conversion instrument
-for a specific audience: crypto-sophisticated, entrepreneurial millennials who are ETH-curious
-and discover financial advisors through content rather than cold calls or referrals.
+The website is not a brochure. It is not a conversion page. It is a **learning environment**
+for a specific audience: crypto-curious millennials who want to understand why Ethereum is
+undervalued, how Metcalfe's Law applies to network value, and what the infrastructure
+build-out actually means for price.
 
-Every page, section, and CTA lives in service of one outcome: **a booked consultation
-with Mark Berubecomes a managed account relationship.**
+**Primary goal:** Educate. Teach the thesis. Make the reader smarter about Ethereum.
+**Secondary goal:** Drive Quantum Letter subscriptions (thequantumletter.com).
+**Tertiary goal:** For readers ready to act — book a consultation with Mark.
+
+Do not design pages, sections, or CTAs as if booking a call is the primary outcome.
+The educational journey IS the product. Trust is built through clarity, not pressure.
 
 ---
 
@@ -390,16 +396,47 @@ export default config
 ```
 
 ### Design Principles
-- **Pure black backgrounds.** `#000000` — not near-black, not dark gray. Pure black.
-  The logo and brand kit are designed against true black.
+- **Alternating dark/light rhythm.** Pages alternate between deep navy sections and white/light
+  sections. This is intentional — not monotone dark mode, not full light mode. The contrast
+  creates visual energy and readability without feeling like a crypto site.
+- **Never all-black.** The base background is deep navy `#04091a`, not pure black. This is warmer
+  and more editorial. Pure black is not used.
 - **Typography-forward.** The thesis is the product. Large, confident type.
-- **The blue is an accent, not a background.** Use `#3B6EE8` for CTAs, active links,
-  and highlight moments — not as a fill for large sections.
-- **Gradient is reserved for the logo and hero moments.** Don't apply the q-gradient
-  to body text or decorative elements.
+- **The blue is an accent and a section tone.** `#3B6EE8` is used for CTAs, links, and active
+  states. Dark navy sections use blue-tinted borders (`#1a2a50`) and card backgrounds (`#0d1b3e`).
+- **Blue gradient CTAs.** Final CTA sections on every page use
+  `linear-gradient(135deg, #1e3a8a 0%, #3b6ee8 100%)` with white text and a white button.
+- **Radial glow on dark hero sections.** A subtle `radial-gradient` blue glow (20% opacity)
+  appears in the corner of dark hero headers. This is the only decorative element allowed.
 - **No stock photos. No crypto moon imagery. No blockchain globe graphics.**
   Charts, formulas, and data callouts are the visuals.
 - **Data visualization over decoration.** If a chart replaces a paragraph, use the chart.
+
+### Section Color Pattern (apply consistently across all pages)
+
+| Section type | Background | Text | Border | Card bg |
+|---|---|---|---|---|
+| Hero / page header | `linear-gradient(135deg, #04091a, #081428)` | white | `#1a2a50` | — |
+| Dark content section | `#08142e` or `#04091a` | white / `#a0aec0` | `#1a2a50` | `#0d1b3e` |
+| Light content section | `#ffffff` or `#f5f7ff` | `#0a0f1e` / `#4a5578` | `#e0e6f5` | `#f0f4ff` |
+| CTA section | `linear-gradient(135deg, #1e3a8a, #3b6ee8)` | white | white/30 | — |
+| Footer | `#04091a` | `#4a5578` | `#1a2a50` | — |
+
+### Text Colors on Dark Backgrounds
+- Primary: `#ffffff`
+- Secondary: `#a0aec0`
+- Muted: `#4a5578`
+- Accent: `#6b9bf5` (lighter blue for labels/eyebrows on dark)
+
+### Text Colors on Light Backgrounds
+- Primary: `#0a0f1e`
+- Secondary: `#4a5578`
+- Muted: `#8892aa`
+- Accent: `#3b6ee8`
+
+### No Event Handlers in Server Components
+Do not use `onMouseEnter` / `onMouseLeave` inline style changes. Use Tailwind hover classes
+(e.g., `hover:border-[#3b6ee8]`) or CSS transitions. All page components are server components.
 
 ### UI Components to Build
 - `QuantumLogo` — SVG-based logomark + wordmark, accepts `variant="white" | "blue"`
@@ -417,17 +454,19 @@ export default config
 The homepage is the most important page. It must answer three questions immediately:
 1. What is this? (10 words or fewer)
 2. Why should I care? (The thesis in 2 sentences)
-3. What do I do next? (One clear CTA)
+3. Where do I go to learn more? (Educational next step — not a sales CTA)
+
+**Primary CTA hierarchy:** Subscribe to The Quantum Letter > Explore the Thesis > Book a Call
 
 **Recommended section order:**
 
-1. **Hero** — Bold thesis statement. Single CTA: "Read the Quantum Letter" or "Book a Call."
-2. **The Gap** — Visualize the difference between current price and institutional fair value.
-3. **Why Ethereum** — Three-pillar summary (EVM, Ultrasound Money, Venmo Moment).
-4. **The Quantum Compass** — Price targets table. Formula source. "Not investment advice" label.
-5. **The Quantum Letter** — Last 3 issues feed from Ghost API. Subscribe CTA.
-6. **About Mark** — One paragraph. ChFC credential. 22 years. The math-first approach.
-7. **Book a Call** — Final CTA section. Calendly embed or link.
+1. **Hero** — Bold thesis statement. Primary CTA: "Read the Quantum Letter." Secondary: "Explore the Thesis."
+2. **The Core Argument** — The Gap: why ETH is mispriced. Educational frame, not a pitch.
+3. **The Quantum Letter** — Featured issues feed (Ghost API). Subscribe CTA front and center.
+4. **Why Ethereum** — Three-pillar educational summary (EVM, Ultrasound Money, Venmo Moment).
+5. **The Quantum Compass** — Metcalfe formula explained as a learning tool. Price targets with compliance label.
+6. **About Mark** — Credibility: why trust this source. ChFC, 22 years, math-first approach.
+7. **Book a Call** — Present but understated. For readers who are ready — not the primary push.
 8. **Footer** — Full compliance disclosure.
 
 ---
