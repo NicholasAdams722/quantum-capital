@@ -66,12 +66,12 @@ export default function MetcalfeCalculator() {
           Implied ETH Price
         </p>
         <p
-          className="text-7xl md:text-8xl font-black tracking-tight mb-4 transition-all duration-150"
+          className="text-5xl md:text-7xl font-black tracking-tight mb-4 transition-colors duration-150 whitespace-nowrap tabular-nums"
           style={{ color: priceColor }}
         >
           {formatPrice(price)}
         </p>
-        <div className="flex items-center justify-center gap-3 flex-wrap">
+        <div className="flex items-center justify-center gap-3 flex-wrap min-h-[36px]">
           <span
             className="text-base font-semibold px-4 py-1.5 rounded-full"
             style={{
@@ -81,15 +81,18 @@ export default function MetcalfeCalculator() {
           >
             {formatPct(pctPrice)} vs. today
           </span>
-          {Math.abs(pctDaa) > 0.5 && (
-            <span
-              className="text-sm px-4 py-1.5 rounded-full"
-              style={{ background: '#0d1b3e', color: '#6b9bf5' }}
-            >
-              {formatPct(pctDaa)} users → {formatPct(pctPrice)} price &nbsp;
-              <span style={{ color: '#4a5578' }}>(n² effect)</span>
-            </span>
-          )}
+          <span
+            className="text-sm px-4 py-1.5 rounded-full transition-opacity duration-150"
+            style={{
+              background: '#0d1b3e',
+              color: '#6b9bf5',
+              opacity: Math.abs(pctDaa) > 0.5 ? 1 : 0,
+              pointerEvents: Math.abs(pctDaa) > 0.5 ? 'auto' : 'none',
+            }}
+          >
+            {formatPct(pctDaa)} users → {formatPct(pctPrice)} price &nbsp;
+            <span style={{ color: '#4a5578' }}>(n² effect)</span>
+          </span>
         </div>
       </div>
 
