@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Mark Berube', url: BASE_URL }],
   creator: 'Mark Berube',
-  publisher: 'Patriot Advisory Group LLC dba Quantum Capital',
+  publisher: 'Quantum Capital, a DBA of Patriot Advisory Group LLC',
   robots: {
     index: true,
     follow: true,

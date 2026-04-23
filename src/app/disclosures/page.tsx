@@ -5,7 +5,7 @@ import ComplianceFooter from '@/components/ComplianceFooter'
 export const metadata: Metadata = {
   title: 'Disclosures',
   description:
-    'Regulatory disclosures for Patriot Advisory Group LLC dba Quantum Capital, a registered investment adviser in the State of New Hampshire.',
+    'Regulatory disclosures for Quantum Capital, a DBA of Patriot Advisory Group LLC, a registered investment adviser in the State of New Hampshire.',
   alternates: { canonical: 'https://quantumcapital.com/disclosures' },
   robots: { index: true, follow: true },
 }
@@ -14,7 +14,7 @@ const sections = [
   {
     title: 'Firm Registration',
     content: [
-      'Patriot Advisory Group LLC dba Quantum Capital is a registered investment adviser in the State of New Hampshire. Registration does not imply a certain level of skill or training.',
+      'Quantum Capital is a DBA of Patriot Advisory Group LLC, a registered investment adviser in the State of New Hampshire. Registration does not imply a certain level of skill or training.',
       'Legal Entity: Patriot Advisory Group LLC | DBA: Quantum Capital | Business ID: NH Dept. of State, 1019244 | Effective Date: February 25, 2026 | Address: 1 New Hampshire Avenue, Suite 125, Portsmouth, NH 03801',
     ],
   },
@@ -37,7 +37,7 @@ const sections = [
   {
     title: 'The Quantum Letter',
     content: [
-      'The Quantum Letter (thequantumletter.com) is a research publication authored by Mark Berube, ChFC. It is published for informational and educational purposes only and does not constitute investment advice or a solicitation. Subscribing to The Quantum Letter does not create an advisory relationship with Patriot Advisory Group LLC or Quantum Capital.',
+      'The Quantum Letter (thequantumletter.com) is a research publication authored by Mark Berube, ChFC. It is published for informational and educational purposes only and does not constitute investment advice or a solicitation. Subscribing to The Quantum Letter does not create an advisory relationship with Quantum Capital or Patriot Advisory Group LLC.',
     ],
   },
   {
@@ -76,7 +76,7 @@ export default function DisclosuresPage() {
             </p>
             <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-4" style={{ color: '#0f172a' }}>Disclosures</h1>
             <p style={{ color: '#475569' }}>
-              Patriot Advisory Group LLC dba Quantum Capital — State-registered RIA, New Hampshire
+              Quantum Capital is a DBA of Patriot Advisory Group LLC — State-registered RIA, New Hampshire
             </p>
           </div>
         </section>
@@ -99,7 +99,7 @@ export default function DisclosuresPage() {
 
             <div className="mt-16 p-8 rounded-sm" style={{ background: '#f8fafc', border: '1px solid #e2e8f0' }}>
               <p className="text-xs leading-relaxed" style={{ color: '#94a3b8' }}>
-                Patriot Advisory Group LLC dba Quantum Capital is a registered investment adviser
+                Quantum Capital is a DBA of Patriot Advisory Group LLC, a registered investment adviser
                 in the State of New Hampshire. Registration does not imply a certain level of skill
                 or training. This website is for informational purposes only and does not constitute
                 investment advice, a solicitation, or an offer to buy or sell any security or digital

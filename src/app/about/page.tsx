@@ -87,8 +87,8 @@ export default function AboutPage() {
               <p className="leading-relaxed mb-6" style={{ color: '#475569' }}>
                 Mark has advised clients for over 22 years. He holds the Chartered Financial
                 Consultant (ChFC) designation — one of the most comprehensive financial planning
-                credentials available. He manages approximately $54M in assets through Patriot
-                Advisory Group LLC dba Quantum Capital, a state-registered RIA in New Hampshire.
+                credentials available. He manages approximately $54M in assets through Quantum Capital,
+                a DBA of Patriot Advisory Group LLC and a state-registered RIA in New Hampshire.
               </p>
               <p className="leading-relaxed mb-6" style={{ color: '#475569' }}>
                 The Quantum Compass is Mark&apos;s framework: a rigorous application of Metcalfe&apos;s
@@ -126,7 +126,7 @@ export default function AboutPage() {
           <div className="max-w-6xl mx-auto">
             <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>The Firm</p>
             <h2 className="text-3xl font-bold tracking-tight mb-12 max-w-xl" style={{ color: '#0f172a' }}>
-              Patriot Advisory Group LLC dba Quantum Capital
+              Quantum Capital is a DBA of Patriot Advisory Group LLC
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#e2e8f0] overflow-hidden rounded-sm">
               {firmDetails.map((item) => (

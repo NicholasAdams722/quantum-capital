@@ -14,7 +14,7 @@ export default function ComplianceFooter() {
               height={30}
               style={{ height: 'auto' }}
             />
-            <p className="text-xs mt-2" style={{ color: '#475569' }}>Patriot Advisory Group LLC dba Quantum Capital</p>
+            <p className="text-xs mt-2" style={{ color: '#475569' }}>Quantum Capital is a DBA of Patriot Advisory Group LLC</p>
           </div>
           <div className="flex flex-wrap gap-6 text-sm" style={{ color: '#475569' }}>
             <Link href="/thesis" className="hover:text-white transition-colors">Thesis</Link>
@@ -27,7 +27,7 @@ export default function ComplianceFooter() {
         </div>
         <div className="pt-8" style={{ borderTop: '1px solid #1e293b' }}>
           <p className="text-xs leading-relaxed max-w-4xl" style={{ color: '#475569' }}>
-            Patriot Advisory Group LLC dba Quantum Capital is a registered investment adviser in the
+            Quantum Capital is a DBA of Patriot Advisory Group LLC, a registered investment adviser in the
             State of New Hampshire. Registration does not imply a certain level of skill or training.
             This website is for informational purposes only and does not constitute investment advice,
             a solicitation, or an offer to buy or sell any security or digital asset. Past performance

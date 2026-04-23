@@ -6,7 +6,7 @@ export function organizationSchema() {
     '@type': 'FinancialService',
     name: 'Quantum Capital',
     legalName: 'Patriot Advisory Group LLC',
-    alternateName: 'Patriot Advisory Group LLC dba Quantum Capital',
+    alternateName: 'Quantum Capital, a DBA of Patriot Advisory Group LLC',
     url: BASE_URL,
     logo: `${BASE_URL}/logo.svg`,
     description:
@@ -81,7 +81,7 @@ export function websiteSchema() {
       'Institutional-grade Ethereum research and managed account services for crypto-curious investors. Powered by Metcalfe\'s Law valuation methodology.',
     publisher: {
       '@type': 'FinancialService',
-      name: 'Patriot Advisory Group LLC dba Quantum Capital',
+      name: 'Quantum Capital, a DBA of Patriot Advisory Group LLC',
     },
   }
 }
