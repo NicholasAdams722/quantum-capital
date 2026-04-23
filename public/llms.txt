@@ -1,0 +1,87 @@
+# Quantum Capital — llms.txt
+
+## What This Site Is
+
+Quantum Capital (quantumcapital.com) is the public-facing website for Patriot Advisory Group LLC dba Quantum Capital, a state-registered Registered Investment Adviser (RIA) in New Hampshire. The firm manages approximately $54M in assets as of April 2026.
+
+The site serves one primary purpose: converting Ethereum-curious millennial investors into managed account clients of Mark Berube, ChFC.
+
+## The Firm
+
+**Legal entity:** Patriot Advisory Group LLC (PAG)
+**DBA:** Quantum Capital
+**Registration:** New Hampshire RIA, Business ID 1019244, effective 02/25/2026
+**Address:** 1 New Hampshire Avenue, Suite 125, Portsmouth, NH 03801
+**AUM:** ~$54M (April 2026)
+
+**Founder:** Mark Berube, ChFC (Chartered Financial Consultant), 22+ years as a financial advisor
+**Director of Operations:** Nick Adams
+
+## The Investment Thesis
+
+Quantum Capital's core thesis is that Ethereum is systematically underpriced relative to its role as the settlement infrastructure for the global machine economy. The thesis rests on three pillars:
+
+**1. The EVM is the Windows of Blockchain**
+The Ethereum Virtual Machine (EVM), invented in 2015, has become the industry standard. 85% of all blockchain traffic runs on EVM. 31,000 active developers. Every major rollup, real-world asset (RWA) platform, and AI agent wallet uses EVM. This represents 11 years of accumulated network effects.
+
+**2. Ethereum is Ultrasound Money**
+EIP-1559 permanently burns ETH with every transaction. The Merge (2022) cut new ETH issuance by 88%. 30%+ of all ETH is locked in staking. Unlike Bitcoin's fixed-schedule scarcity, Ethereum's supply is demand-driven: more usage = less supply. This is the only commodity in the world with this property.
+
+**3. The Venmo Moment (2027–2028)**
+The infrastructure enabling mass adoption is complete or completing: ERC-4337 smart wallets (40M accounts live), EIP-4844 blobs (fees cut 90%+), ZK Rollups (maturing 2026), Pectra/EIP-7702 (AI-compatible wallets, live May 2025). The thesis: buy the toll road in 2026, before mainstream consumers arrive without knowing they're using Ethereum.
+
+## The Quantum Compass (Valuation Framework)
+
+Quantum Capital uses Metcalfe's Law to value the Ethereum network:
+
+**Formula:** Network Value = k × n²
+- n = daily active EOA addresses (human wallets, bots excluded)
+- k = $565 (calibrated April 2026)
+- Source: CFA Institute Cryptoassets Valuation Guide (same methodology used by Grayscale ETHE and Fidelity FETH analysts)
+
+**Price targets (April 2026 base):**
+- Today (700K DAA): $2,350
+- 90 days / mid-July (800K DAA): $3,070
+- 180 days / mid-October (1.0M DAA): $4,780
+- Year-end 2026 (1.25M DAA): $7,350
+
+The n² relationship is non-linear: a 14% increase in users produces a 31% increase in network value.
+
+## Key Regulatory Context
+
+**The CLARITY Act:** Pending US legislation that would codify Ethereum's commodity status into permanent federal law and establish a stablecoin regulatory framework. Working legislative deadline: May 21, 2026.
+
+**Scott Bessent (US Treasury Secretary):** On-record Senate Banking Committee testimony (February 4, 2026) projecting stablecoin market growth 10x to $3 trillion by end of decade, with 60% settling on Ethereum. Each new stablecoin dollar adds a Metcalfe user, increasing n, which increases n² exponentially.
+
+## The Quantum Letter
+
+The Quantum Letter (thequantumletter.com) is a free research newsletter authored by Mark Berube with 16+ published issues. It applies the Metcalfe valuation framework to real-time Ethereum network data and tracks the investment thesis. The website pulls recent issues via the Ghost Content API.
+
+## Target Audience
+
+Crypto-sophisticated entrepreneurial millennials (born 1981–1996) who:
+- Are aware of Ethereum but have not connected it to a long-term managed investment strategy
+- Discover financial advisors through content, not cold calls
+- Have $250K+ in investable assets
+- Want institutional-grade research they can verify themselves
+
+## Site Pages
+
+- `/` — Homepage: thesis summary, Quantum Compass preview, newsletter feed, book-a-call CTA
+- `/thesis` — Full investment thesis: EVM, Ultrasound Money, Venmo Moment
+- `/compass` — Quantum Compass: Metcalfe price targets with compliance framing
+- `/research` — Quantum Letter archive (Ghost API feed)
+- `/about` — Mark Berube biography and firm credentials
+- `/book` — Book a consultation (Calendly)
+- `/disclosures` — RIA regulatory disclosures
+
+## Compliance Notice
+
+Patriot Advisory Group LLC dba Quantum Capital is a registered investment adviser in the State of New Hampshire. Registration does not imply a certain level of skill or training. This website is for informational purposes only and does not constitute investment advice, a solicitation, or an offer to buy or sell any security or digital asset. Past performance does not guarantee future results. All investments involve risk, including the possible loss of principal. Form ADV Part 2 is available upon request.
+
+All price targets and projections represent the mathematical output of Metcalfe's Law formula applied to Ethereum network data. They are not predictions, guarantees, or investment recommendations.
+
+## Contact
+
+To speak with Mark Berube: quantumcapital.com/book
+Research publication: thequantumletter.com

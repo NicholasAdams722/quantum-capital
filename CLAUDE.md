@@ -474,6 +474,94 @@ A v1 deploy to Vercel is complete when:
 
 ---
 
+## 16. SEO & AI Search Architecture
+
+This section documents the SEO and AI search infrastructure. Do not remove or bypass these patterns.
+
+### Files and Their Purpose
+
+| File | Purpose |
+|---|---|
+| `src/app/layout.tsx` | Root `metadata` export — site-wide title template, description, OpenGraph, Twitter Card, robots directives |
+| `src/app/sitemap.ts` | Auto-generated `sitemap.xml` via Next.js file convention. Add new routes here when pages are built. |
+| `src/app/robots.ts` | Auto-generated `robots.txt`. Allows all crawlers; points to sitemap. |
+| `src/lib/structured-data.ts` | JSON-LD schema functions: `organizationSchema()`, `personSchema()`, `websiteSchema()` |
+| `public/llms.txt` | Plain-text context file for AI crawlers (ChatGPT, Perplexity, Gemini, etc.). Human-readable summary of the firm, thesis, and site structure. |
+
+### Metadata Pattern (per page)
+
+Every page must export its own `metadata` object to override the root defaults. Use the title template — it automatically appends `| Quantum Capital`.
+
+```ts
+// src/app/thesis/page.tsx
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'The Investment Thesis',  // renders as "The Investment Thesis | Quantum Capital"
+  description: 'Ethereum is not priced as what it is being built to be...',
+  alternates: {
+    canonical: 'https://quantumcapital.com/thesis',
+  },
+  openGraph: {
+    title: 'The Investment Thesis — Quantum Capital',
+    description: '...',
+    url: 'https://quantumcapital.com/thesis',
+  },
+}
+```
+
+### JSON-LD Structured Data
+
+Three schemas are injected globally in `layout.tsx`:
+- `FinancialService` (Organization) — firm name, address, founder, areas of expertise
+- `Person` — Mark Berube's credentials, title, and knowledge domains
+- `WebSite` — site name, URL, publisher
+
+For individual pages (e.g., `/compass`, `/research/[slug]`), add page-specific JSON-LD inline:
+
+```tsx
+// For a research article page
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: issue.title,
+    author: { '@type': 'Person', name: 'Mark Berube' },
+    publisher: { '@type': 'Organization', name: 'Quantum Capital' },
+    datePublished: issue.published_at,
+    url: `https://quantumcapital.com/research/${issue.slug}`,
+  })}}
+/>
+```
+
+### Fonts
+
+The font setup in `layout.tsx` uses `next/font/google`:
+- `Inter` → CSS variable `--font-inter` → Tailwind `font-sans`
+- `Nunito` (Black weight) → CSS variable `--font-nunito` → Tailwind `font-display`
+
+**Do not import Geist or Geist Mono** — they were the Create Next App defaults and have been replaced.
+
+### AI Search (llms.txt)
+
+`public/llms.txt` is served at `https://quantumcapital.com/llms.txt`. AI crawlers (Perplexity, ChatGPT browsing, Gemini) read this file to understand the site before indexing. Keep it updated when:
+- The investment thesis changes
+- New pages are added
+- Price targets are updated (Quantum Compass)
+- Key personnel or firm details change
+
+### Sitemap Maintenance
+
+`src/app/sitemap.ts` lists all static routes. When a new page is added under `src/app/`, add its entry to the sitemap with an appropriate `changeFrequency` and `priority`:
+- Pages with price data (compass): `weekly`, `0.9`
+- Research archive: `weekly`, `0.8`
+- Static content (about, disclosures): `monthly` or `yearly`, `0.3–0.7`
+
+Dynamic routes (e.g., `/research/[slug]`) should be handled with a separate async sitemap function that fetches slugs from the Ghost API.
+
+---
+
 *Prepared by Nick Adams, Director of Operations, Quantum Capital / Patriot Advisory Group LLC*
 *Last updated: April 2026*
 *Questions: Direct to Nick before making assumptions that affect compliance or brand.*
