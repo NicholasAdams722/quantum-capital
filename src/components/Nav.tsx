@@ -17,8 +17,8 @@ export default function Nav() {
   return (
     <>
       <nav
-        className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm"
-        style={{ background: 'rgba(4, 9, 26, 0.95)', borderBottom: '1px solid #1a2a50' }}
+        className="fixed top-0 left-0 right-0 z-50 bg-white"
+        style={{ borderBottom: '1px solid #e2e8f0' }}
       >
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
@@ -34,9 +34,13 @@ export default function Nav() {
           </Link>
 
           {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-8 text-sm" style={{ color: '#a0aec0' }}>
+          <div className="hidden md:flex items-center gap-8 text-sm font-medium" style={{ color: '#475569' }}>
             {links.map(l => (
-              <Link key={l.href} href={l.href} className="hover:text-white transition-colors">
+              <Link
+                key={l.href}
+                href={l.href}
+                className="transition-colors hover:text-[#0f172a]"
+              >
                 {l.label}
               </Link>
             ))}
@@ -48,7 +52,7 @@ export default function Nav() {
               href="https://thequantumletter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:inline-flex bg-[#3b6ee8] hover:bg-[#6b9bf5] text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors"
+              className="hidden md:inline-flex bg-[#3b6ee8] hover:bg-[#1e3a8a] text-white text-sm font-medium px-5 py-2.5 rounded-full transition-colors"
             >
               Subscribe Free
             </a>
@@ -57,27 +61,27 @@ export default function Nav() {
             <button
               onClick={() => setOpen(!open)}
               className="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5 rounded-sm transition-colors"
-              style={{ color: '#a0aec0' }}
+              style={{ color: '#475569' }}
               aria-label={open ? 'Close menu' : 'Open menu'}
             >
               <span
                 className="block w-6 h-0.5 transition-all duration-200 origin-center"
                 style={{
-                  background: '#a0aec0',
+                  background: '#475569',
                   transform: open ? 'translateY(8px) rotate(45deg)' : 'none',
                 }}
               />
               <span
                 className="block w-6 h-0.5 transition-all duration-200"
                 style={{
-                  background: '#a0aec0',
+                  background: '#475569',
                   opacity: open ? 0 : 1,
                 }}
               />
               <span
                 className="block w-6 h-0.5 transition-all duration-200 origin-center"
                 style={{
-                  background: '#a0aec0',
+                  background: '#475569',
                   transform: open ? 'translateY(-8px) rotate(-45deg)' : 'none',
                 }}
               />
@@ -88,16 +92,16 @@ export default function Nav() {
         {/* Mobile menu dropdown */}
         {open && (
           <div
-            className="md:hidden px-6 pb-6 pt-2 flex flex-col gap-1"
-            style={{ borderTop: '1px solid #1a2a50' }}
+            className="md:hidden px-6 pb-6 pt-2 flex flex-col gap-1 bg-white"
+            style={{ borderTop: '1px solid #e2e8f0' }}
           >
             {links.map(l => (
               <Link
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="py-3 text-base font-medium transition-colors hover:text-white border-b"
-                style={{ color: '#a0aec0', borderColor: '#1a2a50' }}
+                className="py-3 text-base font-medium transition-colors border-b"
+                style={{ color: '#475569', borderColor: '#e2e8f0' }}
               >
                 {l.label}
               </Link>
@@ -107,7 +111,7 @@ export default function Nav() {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
-              className="mt-4 bg-[#3b6ee8] hover:bg-[#6b9bf5] text-white text-sm font-semibold px-5 py-3 rounded-full transition-colors text-center"
+              className="mt-4 bg-[#3b6ee8] hover:bg-[#1e3a8a] text-white text-sm font-semibold px-5 py-3 rounded-full transition-colors text-center"
             >
               Subscribe Free →
             </a>

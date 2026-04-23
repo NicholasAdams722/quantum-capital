@@ -46,23 +46,26 @@ export default function MetcalfeCalculator() {
   const pctDaa   = ((daa - BASELINE_DAA) / BASELINE_DAA) * 100
 
   const priceColor =
-    price > BASELINE_PRICE ? '#22c55e' :
-    price < BASELINE_PRICE ? '#ef4444' : '#ffffff'
+    price > BASELINE_PRICE ? '#16a34a' :
+    price < BASELINE_PRICE ? '#dc2626' : '#0f172a'
 
-  // track fill percentage for the visual gradient
+  const priceBg =
+    price > BASELINE_PRICE ? '#f0fdf4' :
+    price < BASELINE_PRICE ? '#fef2f2' : '#f8fafc'
+
   const fillPct = ((daa - DAA_MIN) / (DAA_MAX - DAA_MIN)) * 100
 
   return (
     <div
-      className="rounded-sm overflow-hidden"
-      style={{ border: '1px solid #1a2a50', background: '#08142e' }}
+      className="rounded-sm overflow-hidden bg-white"
+      style={{ border: '1px solid #e2e8f0' }}
     >
       {/* ── Price output ── */}
       <div
         className="px-8 pt-10 pb-8 text-center"
-        style={{ borderBottom: '1px solid #1a2a50' }}
+        style={{ background: priceBg, borderBottom: '1px solid #e2e8f0' }}
       >
-        <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#4a5578' }}>
+        <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#94a3b8' }}>
           Implied ETH Price
         </p>
         <p
@@ -75,7 +78,7 @@ export default function MetcalfeCalculator() {
           <span
             className="text-base font-semibold px-4 py-1.5 rounded-full"
             style={{
-              background: price > BASELINE_PRICE ? '#052e16' : price < BASELINE_PRICE ? '#2d0000' : '#1a2a50',
+              background: price > BASELINE_PRICE ? '#dcfce7' : price < BASELINE_PRICE ? '#fee2e2' : '#e2e8f0',
               color: priceColor,
             }}
           >
@@ -84,14 +87,14 @@ export default function MetcalfeCalculator() {
           <span
             className="text-sm px-4 py-1.5 rounded-full transition-opacity duration-150 whitespace-nowrap"
             style={{
-              background: '#0d1b3e',
-              color: '#6b9bf5',
+              background: '#eff6ff',
+              color: '#3b6ee8',
               opacity: Math.abs(pctDaa) > 0.5 ? 1 : 0,
               pointerEvents: Math.abs(pctDaa) > 0.5 ? 'auto' : 'none',
             }}
           >
             {formatPct(pctDaa)} users → {formatPct(pctPrice)} price{' '}
-            <span style={{ color: '#4a5578' }}>(n² effect)</span>
+            <span style={{ color: '#94a3b8' }}>(n² effect)</span>
           </span>
         </div>
       </div>
@@ -101,13 +104,13 @@ export default function MetcalfeCalculator() {
         {/* ── DAA Slider ── */}
         <div className="mb-10">
           <div className="flex items-baseline justify-between mb-6">
-            <p className="text-sm font-semibold text-white">
+            <p className="text-sm font-semibold" style={{ color: '#0f172a' }}>
               Daily Active Addresses
-              <span className="ml-2 text-xs font-normal" style={{ color: '#4a5578' }}>(n)</span>
+              <span className="ml-2 text-xs font-normal" style={{ color: '#94a3b8' }}>(n)</span>
             </p>
             <p
               className="text-2xl font-black font-mono"
-              style={{ color: '#6b9bf5' }}
+              style={{ color: '#3b6ee8' }}
             >
               {formatDAA(daa)}
             </p>
@@ -138,7 +141,7 @@ export default function MetcalfeCalculator() {
           </div>
 
           {/* Range labels */}
-          <div className="flex justify-between text-xs mb-8" style={{ color: '#4a5578' }}>
+          <div className="flex justify-between text-xs mb-8" style={{ color: '#94a3b8' }}>
             <span>100K</span>
             <span>1M</span>
             <span>2M</span>
@@ -149,7 +152,7 @@ export default function MetcalfeCalculator() {
 
           {/* Milestone snap buttons */}
           <div>
-            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#4a5578' }}>
+            <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#94a3b8' }}>
               Snap to target
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -161,18 +164,18 @@ export default function MetcalfeCalculator() {
                     onClick={() => setDaa(m.daa)}
                     className="text-left px-4 py-4 rounded-sm transition-all"
                     style={{
-                      background: active ? '#1a2a50' : '#0d1b3e',
-                      border: `1px solid ${active ? '#3b6ee8' : '#1a2a50'}`,
+                      background: active ? '#eff6ff' : '#f8fafc',
+                      border: `1px solid ${active ? '#3b6ee8' : '#e2e8f0'}`,
                     }}
                   >
-                    <p className="text-xs font-semibold mb-1" style={{ color: active ? '#6b9bf5' : '#a0aec0' }}>
+                    <p className="text-xs font-semibold mb-1" style={{ color: active ? '#3b6ee8' : '#475569' }}>
                       {m.label}
                     </p>
-                    <p className="text-xs mb-2" style={{ color: '#4a5578' }}>{m.period}</p>
-                    <p className="text-base font-black" style={{ color: active ? '#ffffff' : '#a0aec0' }}>
+                    <p className="text-xs mb-2" style={{ color: '#94a3b8' }}>{m.period}</p>
+                    <p className="text-base font-black" style={{ color: active ? '#1e3a8a' : '#0f172a' }}>
                       {formatPrice(m.price)}
                     </p>
-                    <p className="text-xs font-mono mt-1" style={{ color: '#4a5578' }}>
+                    <p className="text-xs font-mono mt-1" style={{ color: '#94a3b8' }}>
                       {formatDAA(m.daa)} DAA
                     </p>
                   </button>
@@ -185,22 +188,22 @@ export default function MetcalfeCalculator() {
         {/* ── Live formula ── */}
         <div
           className="px-6 py-4 rounded-sm font-mono text-sm mb-6 flex flex-wrap items-center gap-x-2 gap-y-1"
-          style={{ background: '#0d1b3e', border: '1px solid #1a2a50' }}
+          style={{ background: '#f8fafc', border: '1px solid #e2e8f0' }}
         >
-          <span style={{ color: '#4a5578' }}>V =</span>
-          <span className="font-bold" style={{ color: '#6b9bf5' }}>{k}</span>
-          <span style={{ color: '#4a5578' }}>×</span>
-          <span className="font-bold" style={{ color: '#6b9bf5' }}>({formatDAA(daa)})²</span>
-          <span style={{ color: '#4a5578' }}>=</span>
+          <span style={{ color: '#94a3b8' }}>V =</span>
+          <span className="font-bold" style={{ color: '#3b6ee8' }}>{k}</span>
+          <span style={{ color: '#94a3b8' }}>×</span>
+          <span className="font-bold" style={{ color: '#3b6ee8' }}>({formatDAA(daa)})²</span>
+          <span style={{ color: '#94a3b8' }}>=</span>
           <span className="font-bold text-base" style={{ color: priceColor }}>{formatPrice(price)}</span>
-          <span style={{ color: '#4a5578' }}>per ETH</span>
+          <span style={{ color: '#94a3b8' }}>per ETH</span>
         </div>
 
         {/* ── Advanced: k slider ── */}
         <button
           onClick={() => setShowAdvanced(!showAdvanced)}
           className="flex items-center gap-2 text-xs mb-4 transition-colors w-full text-left"
-          style={{ color: showAdvanced ? '#6b9bf5' : '#4a5578' }}
+          style={{ color: showAdvanced ? '#3b6ee8' : '#94a3b8' }}
         >
           <span style={{
             display: 'inline-block',
@@ -213,18 +216,18 @@ export default function MetcalfeCalculator() {
         {showAdvanced && (
           <div
             className="p-6 rounded-sm"
-            style={{ background: '#0d1b3e', border: '1px solid #1a2a50' }}
+            style={{ background: '#f8fafc', border: '1px solid #e2e8f0' }}
           >
             <div className="flex items-baseline justify-between mb-5">
               <div>
-                <p className="text-sm font-semibold text-white mb-1">
+                <p className="text-sm font-semibold mb-1" style={{ color: '#0f172a' }}>
                   k — network coefficient
                 </p>
-                <p className="text-xs" style={{ color: '#4a5578' }}>
+                <p className="text-xs" style={{ color: '#94a3b8' }}>
                   CFA Institute baseline: $565 (April 2026)
                 </p>
               </div>
-              <p className="text-2xl font-black font-mono" style={{ color: '#6b9bf5' }}>${k}</p>
+              <p className="text-2xl font-black font-mono" style={{ color: '#3b6ee8' }}>${k}</p>
             </div>
             <input
               type="range"
@@ -235,22 +238,22 @@ export default function MetcalfeCalculator() {
               onChange={e => setK(Number(e.target.value))}
               className="w-full mb-3"
             />
-            <div className="flex justify-between text-xs" style={{ color: '#4a5578' }}>
+            <div className="flex justify-between text-xs" style={{ color: '#94a3b8' }}>
               <span>$200 (bear)</span>
-              <span style={{ color: k === BASELINE_K ? '#6b9bf5' : '#4a5578' }}>
+              <span style={{ color: k === BASELINE_K ? '#3b6ee8' : '#94a3b8' }}>
                 $565 ← CFA baseline
               </span>
               <span>$1,000 (bull)</span>
             </div>
             {k !== BASELINE_K && (
-              <p className="text-xs mt-4 px-4 py-2 rounded-sm" style={{ color: '#f59e0b', background: '#1c1200', border: '1px solid #78350f' }}>
+              <p className="text-xs mt-4 px-4 py-2 rounded-sm" style={{ color: '#d97706', background: '#fffbeb', border: '1px solid #fde68a' }}>
                 ⚠ k adjusted from CFA baseline. Output is illustrative only.
               </p>
             )}
             <button
               onClick={() => setK(BASELINE_K)}
               className="mt-4 text-xs underline"
-              style={{ color: '#4a5578' }}
+              style={{ color: '#94a3b8' }}
             >
               Reset to $565
             </button>
@@ -258,7 +261,7 @@ export default function MetcalfeCalculator() {
         )}
 
         {/* ── Disclaimer ── */}
-        <p className="text-xs mt-6 leading-relaxed" style={{ color: '#4a5578' }}>
+        <p className="text-xs mt-6 leading-relaxed" style={{ color: '#94a3b8' }}>
           Not investment advice. Mathematical output of Metcalfe&apos;s Law calibrated to
           April 2026 Ethereum network data. Projections only. Source: CFA Institute
           Cryptoassets Valuation Guide.

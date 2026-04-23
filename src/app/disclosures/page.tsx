@@ -63,46 +63,42 @@ const sections = [
 
 export default function DisclosuresPage() {
   return (
-    <div className="min-h-screen font-sans" style={{ background: '#04091a', color: '#ffffff' }}>
+    <div className="min-h-screen font-sans bg-white text-[#0f172a]">
       <Nav />
 
       <main>
 
-        {/* ── Header ── dark navy */}
-        <section
-          className="pt-40 pb-24 px-6"
-          style={{ background: 'linear-gradient(135deg, #04091a 0%, #081428 60%, #04091a 100%)' }}
-        >
+        {/* ── Header ── white */}
+        <section className="pt-40 pb-24 px-6" style={{ borderBottom: '1px solid #e2e8f0' }}>
           <div className="max-w-3xl mx-auto">
-            <p className="text-xs font-medium uppercase tracking-widest text-[#6b9bf5] mb-6">
+            <p className="text-xs font-medium uppercase tracking-widest mb-6" style={{ color: '#3b6ee8' }}>
               Legal &amp; Regulatory
             </p>
-            <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-4">Disclosures</h1>
-            <p style={{ color: '#a0aec0' }}>
+            <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-4" style={{ color: '#0f172a' }}>Disclosures</h1>
+            <p style={{ color: '#475569' }}>
               Patriot Advisory Group LLC dba Quantum Capital — State-registered RIA, New Hampshire
             </p>
           </div>
         </section>
 
-        {/* ── Disclosure content ── WHITE for readability */}
-        <section className="py-24 px-6" style={{ background: '#ffffff' }}>
+        {/* ── Disclosure content ── */}
+        <section className="py-24 px-6">
           <div className="max-w-3xl mx-auto">
             <div className="space-y-12">
               {sections.map((section, i) => (
-                <div key={section.title} className={i > 0 ? 'pt-12 border-t' : ''} style={{ borderColor: '#e0e6f5' }}>
-                  <h2 className="text-base font-semibold mb-4" style={{ color: '#0a0f1e' }}>{section.title}</h2>
+                <div key={section.title} className={i > 0 ? 'pt-12 border-t' : ''} style={{ borderColor: '#e2e8f0' }}>
+                  <h2 className="text-base font-semibold mb-4" style={{ color: '#0f172a' }}>{section.title}</h2>
                   <div className="space-y-4">
                     {section.content.map((para, j) => (
-                      <p key={j} className="text-sm leading-relaxed" style={{ color: '#4a5578' }}>{para}</p>
+                      <p key={j} className="text-sm leading-relaxed" style={{ color: '#475569' }}>{para}</p>
                     ))}
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Required disclosure block */}
-            <div className="mt-16 p-8 rounded-sm" style={{ background: '#f0f4ff', border: '1px solid #e0e6f5' }}>
-              <p className="text-xs leading-relaxed" style={{ color: '#8892aa' }}>
+            <div className="mt-16 p-8 rounded-sm" style={{ background: '#f8fafc', border: '1px solid #e2e8f0' }}>
+              <p className="text-xs leading-relaxed" style={{ color: '#94a3b8' }}>
                 Patriot Advisory Group LLC dba Quantum Capital is a registered investment adviser
                 in the State of New Hampshire. Registration does not imply a certain level of skill
                 or training. This website is for informational purposes only and does not constitute

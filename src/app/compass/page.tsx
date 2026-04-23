@@ -40,28 +40,21 @@ const chain = [
 
 export default function CompassPage() {
   return (
-    <div className="min-h-screen font-sans" style={{ background: '#04091a', color: '#ffffff' }}>
+    <div className="min-h-screen font-sans bg-white text-[#0f172a]">
       <Nav />
 
       <main>
 
-        {/* ── Header ── dark navy */}
-        <section
-          className="pt-40 pb-32 px-6 relative overflow-hidden"
-          style={{ background: 'linear-gradient(135deg, #04091a 0%, #081428 60%, #04091a 100%)' }}
-        >
-          <div
-            className="absolute top-0 right-0 w-[500px] h-[500px] opacity-20 pointer-events-none"
-            style={{ background: 'radial-gradient(circle at 80% 20%, #3b6ee8 0%, transparent 70%)' }}
-          />
-          <div className="max-w-6xl mx-auto relative">
-            <p className="text-xs font-medium uppercase tracking-widest text-[#6b9bf5] mb-6">
+        {/* ── Header ── white */}
+        <section className="pt-40 pb-24 px-6" style={{ borderBottom: '1px solid #e2e8f0' }}>
+          <div className="max-w-6xl mx-auto">
+            <p className="text-xs font-medium uppercase tracking-widest mb-6" style={{ color: '#3b6ee8' }}>
               The Quantum Compass
             </p>
-            <h1 className="text-5xl md:text-6xl font-black tracking-tight leading-tight mb-8 max-w-4xl">
+            <h1 className="text-5xl md:text-6xl font-black tracking-tight leading-tight mb-8 max-w-4xl" style={{ color: '#0f172a' }}>
               Price targets from a formula, not a feeling.
             </h1>
-            <p className="text-xl max-w-2xl leading-relaxed" style={{ color: '#a0aec0' }}>
+            <p className="text-xl max-w-2xl leading-relaxed" style={{ color: '#475569' }}>
               The Quantum Compass applies Metcalfe&apos;s Law to Ethereum network data — the same
               methodology used by Grayscale (ETHE) and Fidelity (FETH) analysts. It produces
               mathematical outputs, not predictions.
@@ -69,70 +62,70 @@ export default function CompassPage() {
           </div>
         </section>
 
-        {/* ── The Formula ── WHITE */}
-        <section className="py-24 px-6" style={{ background: '#ffffff' }}>
+        {/* ── The Formula ── light gray */}
+        <section className="py-24 px-6" style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
               <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>
                 The Formula
               </p>
-              <h2 className="text-3xl font-bold tracking-tight mb-6" style={{ color: '#0a0f1e' }}>
+              <h2 className="text-3xl font-bold tracking-tight mb-6" style={{ color: '#0f172a' }}>
                 Metcalfe&apos;s Law
               </h2>
-              <p className="leading-relaxed mb-6" style={{ color: '#4a5578' }}>
+              <p className="leading-relaxed mb-6" style={{ color: '#475569' }}>
                 Metcalfe&apos;s Law states that the value of a network is proportional to the square
                 of the number of its connected users. Applied to Ethereum:
               </p>
-              <div className="p-8 mb-6 rounded-sm font-mono" style={{ background: '#f0f4ff', border: '1px solid #e0e6f5' }}>
-                <p className="text-3xl font-black mb-4" style={{ color: '#1e3a8a' }}>V = k × n²</p>
-                <div className="space-y-2 text-sm" style={{ color: '#4a5578' }}>
-                  <p><span className="font-bold" style={{ color: '#0a0f1e' }}>V</span> = Network value (market cap)</p>
-                  <p><span className="font-bold" style={{ color: '#0a0f1e' }}>k</span> = $565 (calibrated April 2026)</p>
-                  <p><span className="font-bold" style={{ color: '#0a0f1e' }}>n</span> = Daily active EOA addresses</p>
-                  <p className="text-xs mt-4" style={{ color: '#8892aa' }}>Human wallets only — bots excluded from n</p>
+              <div className="p-8 mb-6 rounded-sm bg-white" style={{ border: '1px solid #e2e8f0' }}>
+                <p className="text-3xl font-black mb-4 font-mono" style={{ color: '#1e3a8a' }}>V = k × n²</p>
+                <div className="space-y-2 text-sm" style={{ color: '#475569' }}>
+                  <p><span className="font-bold" style={{ color: '#0f172a' }}>V</span> = Network value (market cap)</p>
+                  <p><span className="font-bold" style={{ color: '#0f172a' }}>k</span> = $565 (calibrated April 2026)</p>
+                  <p><span className="font-bold" style={{ color: '#0f172a' }}>n</span> = Daily active EOA addresses</p>
+                  <p className="text-xs mt-4" style={{ color: '#94a3b8' }}>Human wallets only — bots excluded from n</p>
                 </div>
               </div>
-              <p className="text-sm leading-relaxed" style={{ color: '#8892aa' }}>
+              <p className="text-sm leading-relaxed" style={{ color: '#94a3b8' }}>
                 Source: CFA Institute Cryptoassets Valuation Guide. Same methodology used by
                 Grayscale (ETHE) and Fidelity (FETH) for their institutional Ethereum products.
               </p>
             </div>
             <div>
-              <p className="text-xs font-medium uppercase tracking-widest mb-6" style={{ color: '#8892aa' }}>
+              <p className="text-xs font-medium uppercase tracking-widest mb-6" style={{ color: '#94a3b8' }}>
                 Why n² matters
               </p>
               <div className="space-y-3">
                 {nonlinear.map((row) => (
                   <div
                     key={row.users}
-                    className="p-6 rounded-sm"
-                    style={{ background: '#f5f7ff', border: '1px solid #e0e6f5' }}
+                    className="p-6 rounded-sm bg-white"
+                    style={{ border: '1px solid #e2e8f0' }}
                   >
-                    <p className="text-sm mb-2" style={{ color: '#8892aa' }}>{row.users}</p>
+                    <p className="text-sm mb-2" style={{ color: '#94a3b8' }}>{row.users}</p>
                     <div className="flex items-center justify-between">
-                      <p className="text-sm" style={{ color: '#4a5578' }}>{row.change}</p>
+                      <p className="text-sm" style={{ color: '#475569' }}>{row.change}</p>
                       <p className="text-sm font-semibold" style={{ color: '#3b6ee8' }}>{row.result}</p>
                     </div>
                   </div>
                 ))}
               </div>
-              <p className="text-xs mt-4" style={{ color: '#8892aa' }}>
+              <p className="text-xs mt-4" style={{ color: '#94a3b8' }}>
                 The n² relationship is non-linear. Small user gains produce outsized value gains.
               </p>
             </div>
           </div>
         </section>
 
-        {/* ── Calculator ── dark navy */}
-        <section className="py-24 px-6" style={{ background: '#04091a' }}>
+        {/* ── Calculator ── white */}
+        <section className="py-24 px-6" style={{ borderBottom: '1px solid #e2e8f0' }}>
           <div className="max-w-6xl mx-auto">
-            <p className="text-xs font-medium uppercase tracking-widest text-[#6b9bf5] mb-4">
+            <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>
               Try It Yourself
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 max-w-2xl text-white">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 max-w-2xl" style={{ color: '#0f172a' }}>
               Move the slider. Watch the formula update.
             </h2>
-            <p className="mb-12 max-w-xl" style={{ color: '#a0aec0' }}>
+            <p className="mb-12 max-w-xl" style={{ color: '#475569' }}>
               Drag the daily active address slider to see how n² makes small user gains
               produce outsized changes in network value. The non-linearity is the thesis.
             </p>
@@ -140,28 +133,28 @@ export default function CompassPage() {
           </div>
         </section>
 
-        {/* ── Price Targets ── dark navy */}
-        <section className="py-24 px-6" style={{ background: '#08142e' }}>
+        {/* ── Price Targets ── light gray */}
+        <section className="py-24 px-6" style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
           <div className="max-w-6xl mx-auto">
-            <p className="text-xs font-medium uppercase tracking-widest text-[#6b9bf5] mb-4">
+            <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>
               Price Targets
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 max-w-2xl text-white">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 max-w-2xl" style={{ color: '#0f172a' }}>
               2026 Metcalfe projections
             </h2>
-            <p className="mb-12 max-w-xl" style={{ color: '#a0aec0' }}>
+            <p className="mb-12 max-w-xl" style={{ color: '#475569' }}>
               Based on projected daily active address growth as the infrastructure stack matures
               and the CLARITY Act provides regulatory certainty.
             </p>
 
-            <div className="overflow-x-auto rounded-sm" style={{ border: '1px solid #1a2a50' }}>
+            <div className="overflow-x-auto rounded-sm bg-white" style={{ border: '1px solid #e2e8f0' }}>
               <table className="w-full text-left min-w-[600px]">
                 <thead>
-                  <tr style={{ borderBottom: '1px solid #1a2a50', background: '#0d1b3e' }}>
-                    <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest" style={{ color: '#4a5578' }}>Horizon</th>
-                    <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest" style={{ color: '#4a5578' }}>Period</th>
-                    <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest" style={{ color: '#4a5578' }}>Daily Active Addresses</th>
-                    <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest" style={{ color: '#4a5578' }}>Metcalfe Target</th>
+                  <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f8fafc' }}>
+                    <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest" style={{ color: '#94a3b8' }}>Horizon</th>
+                    <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest" style={{ color: '#94a3b8' }}>Period</th>
+                    <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest" style={{ color: '#94a3b8' }}>Daily Active Addresses</th>
+                    <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest" style={{ color: '#94a3b8' }}>Metcalfe Target</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -169,22 +162,22 @@ export default function CompassPage() {
                     <tr
                       key={row.horizon}
                       style={{
-                        borderBottom: i < targets.length - 1 ? '1px solid #1a2a50' : undefined,
-                        background: row.current ? '#0a1628' : 'transparent',
+                        borderBottom: i < targets.length - 1 ? '1px solid #e2e8f0' : undefined,
+                        background: row.current ? '#f8fafc' : 'white',
                       }}
                     >
                       <td className="px-6 py-5">
-                        <span className="text-sm font-semibold text-white">{row.horizon}</span>
+                        <span className="text-sm font-semibold" style={{ color: '#0f172a' }}>{row.horizon}</span>
                         {row.current && (
                           <span
                             className="ml-2 text-xs px-2 py-0.5 rounded-full"
-                            style={{ background: '#1a2a50', color: '#4a5578' }}
+                            style={{ background: '#e2e8f0', color: '#64748b' }}
                           >baseline</span>
                         )}
                       </td>
-                      <td className="px-6 py-5 text-sm" style={{ color: '#4a5578' }}>{row.period}</td>
-                      <td className="px-6 py-5 text-sm font-mono" style={{ color: '#a0aec0' }}>{row.daa}</td>
-                      <td className={`px-6 py-5 text-xl font-black ${i === targets.length - 1 ? 'text-[#6b9bf5]' : 'text-white'}`}>
+                      <td className="px-6 py-5 text-sm" style={{ color: '#475569' }}>{row.period}</td>
+                      <td className="px-6 py-5 text-sm font-mono" style={{ color: '#475569' }}>{row.daa}</td>
+                      <td className="px-6 py-5 text-xl font-black" style={{ color: i === targets.length - 1 ? '#3b6ee8' : '#0f172a' }}>
                         {row.target}
                       </td>
                     </tr>
@@ -193,9 +186,9 @@ export default function CompassPage() {
               </table>
             </div>
 
-            <div className="mt-6 p-6 rounded-sm" style={{ background: '#0d1b3e', border: '1px solid #1a2a50' }}>
-              <p className="text-xs leading-relaxed" style={{ color: '#4a5578' }}>
-                <strong style={{ color: '#a0aec0' }}>Not investment advice.</strong> These figures
+            <div className="mt-6 p-6 rounded-sm bg-white" style={{ border: '1px solid #e2e8f0' }}>
+              <p className="text-xs leading-relaxed" style={{ color: '#94a3b8' }}>
+                <strong style={{ color: '#475569' }}>Not investment advice.</strong> These figures
                 represent the mathematical output of Metcalfe&apos;s Law (V = k × n²) applied to
                 projected Ethereum network data. They are projections, not predictions, guarantees,
                 or solicitations. Formula source: CFA Institute Cryptoassets Valuation Guide.
@@ -205,39 +198,39 @@ export default function CompassPage() {
           </div>
         </section>
 
-        {/* ── Bessent Multiplier ── WHITE */}
-        <section className="py-24 px-6" style={{ background: '#ffffff' }}>
+        {/* ── Bessent Multiplier ── white */}
+        <section className="py-24 px-6" style={{ borderBottom: '1px solid #e2e8f0' }}>
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
               <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>
                 Stablecoin Catalyst
               </p>
-              <h2 className="text-3xl font-bold tracking-tight mb-6" style={{ color: '#0a0f1e' }}>
+              <h2 className="text-3xl font-bold tracking-tight mb-6" style={{ color: '#0f172a' }}>
                 Every new stablecoin dollar is a new Metcalfe user.
               </h2>
-              <p className="leading-relaxed mb-6" style={{ color: '#4a5578' }}>
+              <p className="leading-relaxed mb-6" style={{ color: '#475569' }}>
                 US Treasury Secretary Scott Bessent projected stablecoin market growth from
                 $300B to $3 trillion by end of decade (Senate Banking Committee, February 4,
                 2026 — verifiable public congressional record).
               </p>
-              <p className="leading-relaxed" style={{ color: '#4a5578' }}>
+              <p className="leading-relaxed" style={{ color: '#475569' }}>
                 60% of stablecoins settle on Ethereum. Each new dollar adds an active address.
                 Each new address increases n. Each increase in n increases n² exponentially.
                 The formula compounds.
               </p>
             </div>
-            <div className="p-10 rounded-sm" style={{ background: '#f0f4ff', border: '1px solid #e0e6f5' }}>
-              <p className="text-xs uppercase tracking-widest mb-6" style={{ color: '#8892aa' }}>The chain reaction</p>
+            <div className="p-10 rounded-sm" style={{ background: '#f8fafc', border: '1px solid #e2e8f0' }}>
+              <p className="text-xs uppercase tracking-widest mb-6" style={{ color: '#94a3b8' }}>The chain reaction</p>
               <div className="space-y-4">
                 {chain.map((step, i) => (
                   <div key={step} className="flex items-start gap-4">
                     <span
-                      className="shrink-0 w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center mt-0.5"
-                      style={{ background: '#dbeafe', color: '#1e3a8a' }}
+                      className="shrink-0 w-6 h-6 rounded-full text-xs font-bold flex items-center justify-center mt-0.5 text-white"
+                      style={{ background: '#3b6ee8' }}
                     >
                       {i + 1}
                     </span>
-                    <p className="text-sm leading-relaxed" style={{ color: '#4a5578' }}>{step}</p>
+                    <p className="text-sm leading-relaxed" style={{ color: '#475569' }}>{step}</p>
                   </div>
                 ))}
               </div>
@@ -245,27 +238,24 @@ export default function CompassPage() {
           </div>
         </section>
 
-        {/* ── CTA ── blue gradient */}
-        <section
-          className="py-24 px-6"
-          style={{ background: 'linear-gradient(135deg, #1e3a8a 0%, #3b6ee8 100%)' }}
-        >
+        {/* ── CTA ── dark */}
+        <section className="py-24 px-6" style={{ background: '#0f172a' }}>
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <h2 className="text-3xl font-bold tracking-tight mb-2 text-white">Ready to put the Compass to work?</h2>
-              <p style={{ color: '#bfdbfe' }}>Book a call with Mark to discuss positioning and managed account options.</p>
+              <p style={{ color: '#64748b' }}>Book a call with Mark to discuss positioning and managed account options.</p>
             </div>
             <div className="flex gap-4 shrink-0">
               <Link
                 href="/book"
-                className="inline-flex items-center justify-center bg-white hover:bg-blue-50 font-semibold px-8 py-4 rounded-full transition-colors"
-                style={{ color: '#1e3a8a' }}
+                className="inline-flex items-center justify-center bg-[#3b6ee8] hover:bg-[#6b9bf5] text-white font-semibold px-8 py-4 rounded-full transition-colors"
               >
                 Book a Call
               </Link>
               <Link
                 href="/research"
-                className="inline-flex items-center justify-center border border-white/30 hover:border-white text-white font-semibold px-8 py-4 rounded-full transition-colors"
+                className="inline-flex items-center justify-center border text-white font-semibold px-8 py-4 rounded-full transition-colors"
+                style={{ borderColor: '#334155' }}
               >
                 Read the Research
               </Link>

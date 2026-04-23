@@ -15,7 +15,6 @@ export const metadata: Metadata = {
   },
 }
 
-// Fallback issues shown when Ghost API key is not yet configured
 const FALLBACK_ISSUES = [
   {
     title: 'ETH Research: ETHA, SBET, and the Portfolio Positioning Case',
@@ -67,20 +66,20 @@ function IssueCard({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex flex-col p-8 rounded-sm transition-all hover:shadow-lg hover:border-[#3b6ee8]"
-      style={{ background: '#f5f7ff', border: '1px solid #e0e6f5' }}
+      className="group flex flex-col p-8 rounded-sm transition-all hover:border-[#3b6ee8] hover:shadow-sm bg-white"
+      style={{ border: '1px solid #e2e8f0' }}
     >
       <div className="flex items-center justify-between mb-6">
         <span className="text-xs font-medium uppercase tracking-widest" style={{ color: '#3b6ee8' }}>
           {label}
         </span>
-        <span className="text-xs" style={{ color: '#8892aa' }}>{readTime}</span>
+        <span className="text-xs" style={{ color: '#94a3b8' }}>{readTime}</span>
       </div>
-      <h2 className="text-base font-semibold leading-snug mb-3 flex-1 transition-colors group-hover:text-[#3b6ee8]" style={{ color: '#0a0f1e' }}>
+      <h2 className="text-base font-semibold leading-snug mb-3 flex-1 transition-colors group-hover:text-[#3b6ee8]" style={{ color: '#0f172a' }}>
         {title}
       </h2>
-      <p className="text-sm leading-relaxed mb-6" style={{ color: '#8892aa' }}>{excerpt}</p>
-      <p className="text-xs" style={{ color: '#8892aa' }}>{date}</p>
+      <p className="text-sm leading-relaxed mb-6" style={{ color: '#475569' }}>{excerpt}</p>
+      <p className="text-xs" style={{ color: '#94a3b8' }}>{date}</p>
     </a>
   )
 }
@@ -90,30 +89,23 @@ export default async function ResearchPage() {
   const liveData = isGhostConfigured() && ghostPosts.length > 0
 
   return (
-    <div className="min-h-screen font-sans" style={{ background: '#04091a', color: '#ffffff' }}>
+    <div className="min-h-screen font-sans bg-white text-[#0f172a]">
       <Nav />
 
       <main>
 
-        {/* ── Header ── dark navy */}
-        <section
-          className="pt-40 pb-24 px-6 relative overflow-hidden"
-          style={{ background: 'linear-gradient(135deg, #04091a 0%, #081428 60%, #04091a 100%)' }}
-        >
-          <div
-            className="absolute top-0 left-1/2 w-[600px] h-[400px] opacity-20 pointer-events-none"
-            style={{ background: 'radial-gradient(circle at 50% 0%, #3b6ee8 0%, transparent 70%)' }}
-          />
-          <div className="max-w-6xl mx-auto relative">
+        {/* ── Header ── white */}
+        <section className="pt-40 pb-24 px-6" style={{ borderBottom: '1px solid #e2e8f0' }}>
+          <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
               <div>
-                <p className="text-xs font-medium uppercase tracking-widest text-[#6b9bf5] mb-6">
+                <p className="text-xs font-medium uppercase tracking-widest mb-6" style={{ color: '#3b6ee8' }}>
                   The Quantum Letter
                 </p>
-                <h1 className="text-5xl md:text-6xl font-black tracking-tight leading-tight mb-6 max-w-2xl">
+                <h1 className="text-5xl md:text-6xl font-black tracking-tight leading-tight mb-6 max-w-2xl" style={{ color: '#0f172a' }}>
                   Free research. Institutional rigor. No hype.
                 </h1>
-                <p className="text-xl max-w-xl leading-relaxed" style={{ color: '#a0aec0' }}>
+                <p className="text-xl max-w-xl leading-relaxed" style={{ color: '#475569' }}>
                   Mark Berube applies Metcalfe&apos;s Law to live Ethereum network data and publishes
                   the results.{liveData ? ` ${ghostPosts.length} issues.` : ' 16 issues.'} No prediction, only projection.
                 </p>
@@ -122,7 +114,7 @@ export default async function ResearchPage() {
                 href="https://thequantumletter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="shrink-0 bg-[#3b6ee8] hover:bg-[#6b9bf5] text-white font-semibold px-8 py-4 rounded-full transition-colors text-sm"
+                className="shrink-0 bg-[#3b6ee8] hover:bg-[#1e3a8a] text-white font-semibold px-8 py-4 rounded-full transition-colors text-sm"
               >
                 Subscribe free →
               </a>
@@ -130,13 +122,13 @@ export default async function ResearchPage() {
           </div>
         </section>
 
-        {/* ── Issue Grid ── WHITE */}
-        <section className="py-24 px-6" style={{ background: '#ffffff' }}>
+        {/* ── Issue Grid ── light gray */}
+        <section className="py-24 px-6" style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
           <div className="max-w-6xl mx-auto">
             <p className="text-xs font-medium uppercase tracking-widest mb-8" style={{ color: '#3b6ee8' }}>
-              Archive {liveData && <span style={{ color: '#8892aa' }}>— pulling live from thequantumletter.com</span>}
+              Archive {liveData && <span style={{ color: '#94a3b8' }}>— pulling live from thequantumletter.com</span>}
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {liveData
                 ? ghostPosts.map((post, i) => (
                     <IssueCard
@@ -165,14 +157,14 @@ export default async function ResearchPage() {
           </div>
         </section>
 
-        {/* ── Subscribe CTA ── dark navy */}
-        <section className="py-24 px-6" style={{ background: '#08142e' }}>
+        {/* ── Subscribe CTA ── white */}
+        <section className="py-24 px-6" style={{ borderBottom: '1px solid #e2e8f0' }}>
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
-              <h2 className="text-3xl font-bold tracking-tight mb-4 text-white">
+              <h2 className="text-3xl font-bold tracking-tight mb-4" style={{ color: '#0f172a' }}>
                 Get new issues in your inbox.
               </h2>
-              <p className="leading-relaxed mb-8" style={{ color: '#a0aec0' }}>
+              <p className="leading-relaxed mb-8" style={{ color: '#475569' }}>
                 The Quantum Letter is published on thequantumletter.com — free, no paywall.
                 Subscribe to get each issue delivered when Mark publishes it.
               </p>
@@ -180,18 +172,18 @@ export default async function ResearchPage() {
                 href="https://thequantumletter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-[#3b6ee8] hover:bg-[#6b9bf5] text-white font-semibold px-8 py-4 rounded-full transition-colors"
+                className="inline-flex items-center justify-center bg-[#3b6ee8] hover:bg-[#1e3a8a] text-white font-semibold px-8 py-4 rounded-full transition-colors"
               >
                 Subscribe on The Quantum Letter
               </a>
             </div>
-            <div className="p-10 rounded-sm" style={{ background: '#0d1b3e', border: '1px solid #1a2a50' }}>
-              <p className="text-xs uppercase tracking-widest mb-6" style={{ color: '#4a5578' }}>What you get</p>
+            <div className="p-10 rounded-sm" style={{ background: '#f8fafc', border: '1px solid #e2e8f0' }}>
+              <p className="text-xs uppercase tracking-widest mb-6" style={{ color: '#94a3b8' }}>What you get</p>
               <div className="space-y-4">
                 {whatYouGet.map((item) => (
                   <div key={item} className="flex items-start gap-3">
                     <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-[#3b6ee8] mt-2" />
-                    <p className="text-sm" style={{ color: '#a0aec0' }}>{item}</p>
+                    <p className="text-sm" style={{ color: '#475569' }}>{item}</p>
                   </div>
                 ))}
               </div>
