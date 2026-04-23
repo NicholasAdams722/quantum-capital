@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import ComplianceFooter from '@/components/ComplianceFooter'
+import { getPosts, formatDate, issueLabel, isGhostConfigured, type GhostPost } from '@/lib/ghost'
 
 export const metadata: Metadata = {
   title: 'Quantum Capital — Institutional Ethereum Research & Education',
@@ -41,31 +42,36 @@ const pillars = [
   },
 ]
 
-const issues = [
+const FALLBACK_ISSUES = [
   {
-    issue: 'Issue 16',
-    date: 'April 17, 2026',
+    label: 'Issue 16', date: 'April 17, 2026', href: 'https://thequantumletter.com',
     title: 'ETH Research: ETHA, SBET, and the Portfolio Positioning Case',
     excerpt: 'A breakdown of the three instruments used for Ethereum exposure — and why structure matters as much as the thesis.',
-    href: 'https://thequantumletter.com',
   },
   {
-    issue: 'Issue 15',
-    date: 'April 3, 2026',
+    label: 'Issue 15', date: 'April 3, 2026', href: 'https://thequantumletter.com',
     title: 'The CLARITY Act and What Commodity Status Actually Means',
     excerpt: 'When Ethereum goes from "legal" to "law," institutional risk drops by at least 50%. Here is what the legislation does.',
-    href: 'https://thequantumletter.com',
   },
   {
-    issue: 'Issue 14',
-    date: 'March 20, 2026',
+    label: 'Issue 14', date: 'March 20, 2026', href: 'https://thequantumletter.com',
     title: "Bessent's $3 Trillion and the Metcalfe Multiplier",
     excerpt: "Every new stablecoin dollar is a new Metcalfe user. Every increase in n increases n² exponentially.",
-    href: 'https://thequantumletter.com',
   },
 ]
 
-export default function HomePage() {
+export default async function HomePage() {
+  const ghostPosts: GhostPost[] = await getPosts(3)
+  const liveData = isGhostConfigured() && ghostPosts.length > 0
+  const issues = liveData
+    ? ghostPosts.map((post, i) => ({
+        label: issueLabel(i, ghostPosts.length),
+        date: formatDate(post.published_at),
+        title: post.title,
+        excerpt: post.excerpt ?? '',
+        href: post.url,
+      }))
+    : FALLBACK_ISSUES
   return (
     <div className="min-h-screen text-white font-sans" style={{ background: '#04091a' }}>
       <Nav />
@@ -184,7 +190,7 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {issues.map((item) => (
                 <a
-                  key={item.issue}
+                  key={item.label}
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -192,7 +198,7 @@ export default function HomePage() {
                   style={{ background: '#0d1b3e', border: '1px solid #1a2a50' }}
                 >
                   <div className="flex items-center justify-between mb-5">
-                    <span className="text-xs font-medium uppercase tracking-widest text-[#6b9bf5]">{item.issue}</span>
+                    <span className="text-xs font-medium uppercase tracking-widest text-[#6b9bf5]">{item.label}</span>
                     <span className="text-xs text-[#4a5578]">{item.date}</span>
                   </div>
                   <h3 className="text-base font-semibold leading-snug mb-3 text-white group-hover:text-[#6b9bf5] transition-colors flex-1">

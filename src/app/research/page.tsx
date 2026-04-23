@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
-import Link from 'next/link'
 import Nav from '@/components/Nav'
 import ComplianceFooter from '@/components/ComplianceFooter'
+import { getPosts, formatDate, issueLabel, isGhostConfigured, type GhostPost } from '@/lib/ghost'
 
 export const metadata: Metadata = {
   title: 'Research — The Quantum Letter',
@@ -15,45 +15,37 @@ export const metadata: Metadata = {
   },
 }
 
-// Placeholder data — replace with Ghost Content API fetch when wired.
-// All links point to thequantumletter.com until real slugs are available from the API.
-// Ghost API: GET /ghost/api/content/posts/?key={GHOST_CONTENT_API_KEY}&limit=all&fields=title,slug,excerpt,published_at,reading_time
-const issues = [
+// Fallback issues shown when Ghost API key is not yet configured
+const FALLBACK_ISSUES = [
   {
-    issue: 'Issue 16', date: 'April 17, 2026',
     title: 'ETH Research: ETHA, SBET, and the Portfolio Positioning Case',
     excerpt: 'A breakdown of the three instruments we use for Ethereum exposure — and why the structure matters as much as the thesis.',
-    readTime: '8 min read',
+    date: 'April 17, 2026', label: 'Issue 16', readTime: '8 min read',
   },
   {
-    issue: 'Issue 15', date: 'April 3, 2026',
     title: 'The CLARITY Act and What Commodity Status Actually Means',
     excerpt: 'When Ethereum goes from "legal" to "law," risk is reduced by at least 50%. Here is what the legislation does and when it lands.',
-    readTime: '6 min read',
+    date: 'April 3, 2026', label: 'Issue 15', readTime: '6 min read',
   },
   {
-    issue: 'Issue 14', date: 'March 20, 2026',
     title: "Bessent's $3 Trillion and the Metcalfe Multiplier",
     excerpt: "Every new stablecoin dollar is a new Metcalfe user. Every new user increases n. Every increase in n increases n² exponentially.",
-    readTime: '7 min read',
+    date: 'March 20, 2026', label: 'Issue 14', readTime: '7 min read',
   },
   {
-    issue: 'Issue 13', date: 'March 6, 2026',
     title: 'Pectra, EIP-7702, and the AI Agent Wallet Stack',
     excerpt: 'The upgrade that makes Ethereum wallets compatible with autonomous AI agents is live. Here is what it means for network value.',
-    readTime: '9 min read',
+    date: 'March 6, 2026', label: 'Issue 13', readTime: '9 min read',
   },
   {
-    issue: 'Issue 12', date: 'February 20, 2026',
     title: 'Ultrasound Money: The Supply Mechanics Bitcoin Cannot Match',
     excerpt: 'Bitcoin is sound money. Ethereum is ultrasound money. The difference is demand-driven supply destruction — and it is already running.',
-    readTime: '10 min read',
+    date: 'February 20, 2026', label: 'Issue 12', readTime: '10 min read',
   },
   {
-    issue: 'Issue 11', date: 'February 5, 2026',
     title: 'The EVM is the Windows of Blockchain',
     excerpt: 'Eleven years of network effects. 31,000 developers. 85% of all blockchain traffic. The moat is not a bet — it is an observation.',
-    readTime: '8 min read',
+    date: 'February 5, 2026', label: 'Issue 11', readTime: '8 min read',
   },
 ]
 
@@ -65,7 +57,38 @@ const whatYouGet = [
   'Portfolio positioning context — ETHA, SBET, BMNR',
 ]
 
-export default function ResearchPage() {
+function IssueCard({
+  label, title, excerpt, date, readTime, href,
+}: {
+  label: string; title: string; excerpt: string; date: string; readTime: string; href: string
+}) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group flex flex-col p-8 rounded-sm transition-all hover:shadow-lg hover:border-[#3b6ee8]"
+      style={{ background: '#f5f7ff', border: '1px solid #e0e6f5' }}
+    >
+      <div className="flex items-center justify-between mb-6">
+        <span className="text-xs font-medium uppercase tracking-widest" style={{ color: '#3b6ee8' }}>
+          {label}
+        </span>
+        <span className="text-xs" style={{ color: '#8892aa' }}>{readTime}</span>
+      </div>
+      <h2 className="text-base font-semibold leading-snug mb-3 flex-1 transition-colors group-hover:text-[#3b6ee8]" style={{ color: '#0a0f1e' }}>
+        {title}
+      </h2>
+      <p className="text-sm leading-relaxed mb-6" style={{ color: '#8892aa' }}>{excerpt}</p>
+      <p className="text-xs" style={{ color: '#8892aa' }}>{date}</p>
+    </a>
+  )
+}
+
+export default async function ResearchPage() {
+  const ghostPosts: GhostPost[] = await getPosts(12)
+  const liveData = isGhostConfigured() && ghostPosts.length > 0
+
   return (
     <div className="min-h-screen font-sans" style={{ background: '#04091a', color: '#ffffff' }}>
       <Nav />
@@ -92,7 +115,7 @@ export default function ResearchPage() {
                 </h1>
                 <p className="text-xl max-w-xl leading-relaxed" style={{ color: '#a0aec0' }}>
                   Mark Berube applies Metcalfe&apos;s Law to live Ethereum network data and publishes
-                  the results. 16 issues. No prediction, only projection.
+                  the results.{liveData ? ` ${ghostPosts.length} issues.` : ' 16 issues.'} No prediction, only projection.
                 </p>
               </div>
               <a
@@ -111,34 +134,33 @@ export default function ResearchPage() {
         <section className="py-24 px-6" style={{ background: '#ffffff' }}>
           <div className="max-w-6xl mx-auto">
             <p className="text-xs font-medium uppercase tracking-widest mb-8" style={{ color: '#3b6ee8' }}>
-              Archive
+              Archive {liveData && <span style={{ color: '#8892aa' }}>— pulling live from thequantumletter.com</span>}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {issues.map((item) => (
-                <a
-                  key={item.issue}
-                  href="https://thequantumletter.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex flex-col p-8 rounded-sm transition-all hover:shadow-lg"
-                  style={{ background: '#f5f7ff', border: '1px solid #e0e6f5' }}
-                >
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-xs font-medium uppercase tracking-widest" style={{ color: '#3b6ee8' }}>
-                      {item.issue}
-                    </span>
-                    <span className="text-xs" style={{ color: '#8892aa' }}>{item.readTime}</span>
-                  </div>
-                  <h2
-                    className="text-base font-semibold leading-snug mb-3 flex-1 transition-colors group-hover:text-[#3b6ee8]"
-                    style={{ color: '#0a0f1e' }}
-                  >
-                    {item.title}
-                  </h2>
-                  <p className="text-sm leading-relaxed mb-6" style={{ color: '#8892aa' }}>{item.excerpt}</p>
-                  <p className="text-xs" style={{ color: '#8892aa' }}>{item.date}</p>
-                </a>
-              ))}
+              {liveData
+                ? ghostPosts.map((post, i) => (
+                    <IssueCard
+                      key={post.id}
+                      label={issueLabel(i, ghostPosts.length)}
+                      title={post.title}
+                      excerpt={post.excerpt ?? ''}
+                      date={formatDate(post.published_at)}
+                      readTime={`${post.reading_time} min read`}
+                      href={post.url}
+                    />
+                  ))
+                : FALLBACK_ISSUES.map((item) => (
+                    <IssueCard
+                      key={item.label}
+                      label={item.label}
+                      title={item.title}
+                      excerpt={item.excerpt}
+                      date={item.date}
+                      readTime={item.readTime}
+                      href="https://thequantumletter.com"
+                    />
+                  ))
+              }
             </div>
           </div>
         </section>
