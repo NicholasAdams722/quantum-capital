@@ -31,8 +31,12 @@ export default function BookPage() {
       <main>
 
         {/* ── Header ── white */}
-        <section className="pt-40 pb-16 px-6" style={{ borderBottom: '1px solid #e2e8f0' }}>
-          <div className="max-w-6xl mx-auto">
+        <section className="pt-40 pb-16 px-6 relative overflow-hidden" style={{ borderBottom: '1px solid #e2e8f0' }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(#e2e8f0 1px, transparent 1px)',
+            backgroundSize: '24px 24px',
+          }} />
+          <div className="max-w-6xl mx-auto relative z-10">
             <p className="text-xs font-medium uppercase tracking-widest mb-6" style={{ color: '#3b6ee8' }}>Book a Call</p>
             <h1 className="text-4xl md:text-5xl font-black tracking-tight leading-tight mb-6 max-w-2xl" style={{ color: '#0f172a' }}>
               Ready to put the thesis to work?

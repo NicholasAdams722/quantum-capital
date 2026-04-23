@@ -69,8 +69,12 @@ export default function DisclosuresPage() {
       <main>
 
         {/* ── Header ── white */}
-        <section className="pt-40 pb-24 px-6" style={{ borderBottom: '1px solid #e2e8f0' }}>
-          <div className="max-w-3xl mx-auto">
+        <section className="pt-40 pb-24 px-6 relative overflow-hidden" style={{ borderBottom: '1px solid #e2e8f0' }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(#e2e8f0 1px, transparent 1px)',
+            backgroundSize: '24px 24px',
+          }} />
+          <div className="max-w-3xl mx-auto relative z-10">
             <p className="text-xs font-medium uppercase tracking-widest mb-6" style={{ color: '#3b6ee8' }}>
               Legal &amp; Regulatory
             </p>

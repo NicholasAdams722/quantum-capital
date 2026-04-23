@@ -33,8 +33,12 @@ export default function ThesisPage() {
       <main>
 
         {/* ── Header ── white hero */}
-        <section className="pt-40 pb-24 px-6" style={{ borderBottom: '1px solid #e2e8f0' }}>
-          <div className="max-w-6xl mx-auto">
+        <section className="pt-40 pb-24 px-6 relative overflow-hidden" style={{ borderBottom: '1px solid #e2e8f0' }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(#e2e8f0 1px, transparent 1px)',
+            backgroundSize: '24px 24px',
+          }} />
+          <div className="max-w-6xl mx-auto relative z-10">
             <p className="text-xs font-medium uppercase tracking-widest mb-6" style={{ color: '#3b6ee8' }}>
               The Investment Thesis
             </p>
@@ -269,8 +273,15 @@ export default function ThesisPage() {
         </section>
 
         {/* ── CTA ── dark */}
-        <section className="py-24 px-6" style={{ background: '#0f172a' }}>
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+        <section className="py-24 px-6 relative overflow-hidden" style={{ background: '#0f172a' }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: 'linear-gradient(rgba(30,41,59,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(30,41,59,0.7) 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+          }} />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] pointer-events-none" style={{
+            background: 'radial-gradient(circle at 80% 20%, rgba(59,110,232,0.15) 0%, transparent 60%)',
+          }} />
+          <div className="max-w-6xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <h2 className="text-3xl font-bold tracking-tight mb-2 text-white">See the math behind the thesis.</h2>
               <p style={{ color: '#64748b' }}>The Quantum Compass translates the thesis into price targets.</p>

@@ -45,9 +45,19 @@ export default function CompassPage() {
 
       <main>
 
-        {/* ── Header ── white */}
-        <section className="pt-40 pb-24 px-6" style={{ borderBottom: '1px solid #e2e8f0' }}>
-          <div className="max-w-6xl mx-auto">
+        {/* ── Header ── white with dot grid + formula watermark */}
+        <section className="pt-40 pb-24 px-6 relative overflow-hidden" style={{ borderBottom: '1px solid #e2e8f0' }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(#e2e8f0 1px, transparent 1px)',
+            backgroundSize: '24px 24px',
+          }} />
+          {/* Formula watermark */}
+          <div className="absolute right-0 top-0 bottom-0 flex items-center pointer-events-none select-none overflow-hidden pr-8" style={{ color: '#f1f5f9' }}>
+            <span className="font-black font-mono leading-none" style={{ fontSize: 'clamp(140px, 18vw, 260px)', letterSpacing: '-0.04em' }}>
+              n²
+            </span>
+          </div>
+          <div className="max-w-6xl mx-auto relative z-10">
             <p className="text-xs font-medium uppercase tracking-widest mb-6" style={{ color: '#3b6ee8' }}>
               The Quantum Compass
             </p>
@@ -62,9 +72,13 @@ export default function CompassPage() {
           </div>
         </section>
 
-        {/* ── The Formula ── light gray */}
-        <section className="py-24 px-6" style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        {/* ── The Formula ── light gray with cross pattern */}
+        <section className="py-24 px-6 relative overflow-hidden" style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 8v16M8 16h16' stroke='%23e2e8f0' stroke-width='1'/%3E%3C/svg%3E")`,
+            backgroundSize: '32px 32px',
+          }} />
+          <div className="max-w-6xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
               <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>
                 The Formula
@@ -116,9 +130,13 @@ export default function CompassPage() {
           </div>
         </section>
 
-        {/* ── Calculator ── white */}
-        <section className="py-24 px-6" style={{ borderBottom: '1px solid #e2e8f0' }}>
-          <div className="max-w-6xl mx-auto">
+        {/* ── Calculator ── white with graph paper grid */}
+        <section className="py-24 px-6 relative overflow-hidden" style={{ borderBottom: '1px solid #e2e8f0' }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: 'linear-gradient(#f1f5f9 1px, transparent 1px), linear-gradient(90deg, #f1f5f9 1px, transparent 1px)',
+            backgroundSize: '40px 40px',
+          }} />
+          <div className="max-w-6xl mx-auto relative z-10">
             <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>
               Try It Yourself
             </p>
@@ -239,8 +257,15 @@ export default function CompassPage() {
         </section>
 
         {/* ── CTA ── dark */}
-        <section className="py-24 px-6" style={{ background: '#0f172a' }}>
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+        <section className="py-24 px-6 relative overflow-hidden" style={{ background: '#0f172a' }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: 'linear-gradient(rgba(30,41,59,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(30,41,59,0.7) 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+          }} />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] pointer-events-none" style={{
+            background: 'radial-gradient(circle at 20% 80%, rgba(59,110,232,0.15) 0%, transparent 60%)',
+          }} />
+          <div className="max-w-6xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <h2 className="text-3xl font-bold tracking-tight mb-2 text-white">Ready to put the Compass to work?</h2>
               <p style={{ color: '#64748b' }}>Book a call with Mark to discuss positioning and managed account options.</p>

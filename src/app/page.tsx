@@ -80,8 +80,13 @@ export default async function HomePage() {
       <main>
 
         {/* ── Hero ── white, full-bleed typography */}
-        <section className="pt-40 pb-32 px-6" style={{ borderBottom: '1px solid #e2e8f0' }}>
-          <div className="max-w-6xl mx-auto">
+        <section className="pt-40 pb-32 px-6 relative overflow-hidden" style={{ borderBottom: '1px solid #e2e8f0' }}>
+          {/* Dot grid texture */}
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: 'radial-gradient(#e2e8f0 1px, transparent 1px)',
+            backgroundSize: '24px 24px',
+          }} />
+          <div className="max-w-6xl mx-auto relative z-10">
             <p className="text-xs font-medium uppercase tracking-widest mb-6" style={{ color: '#3b6ee8' }}>
               Institutional Ethereum Research
             </p>
@@ -114,9 +119,13 @@ export default async function HomePage() {
           </div>
         </section>
 
-        {/* ── Core Argument ── light gray */}
-        <section className="py-24 px-6" style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
-          <div className="max-w-6xl mx-auto">
+        {/* ── Core Argument ── light gray with cross pattern */}
+        <section className="py-24 px-6 relative overflow-hidden" style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 8v16M8 16h16' stroke='%23e2e8f0' stroke-width='1'/%3E%3C/svg%3E")`,
+            backgroundSize: '32px 32px',
+          }} />
+          <div className="max-w-6xl mx-auto relative z-10">
             <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>
               The Core Argument
             </p>
@@ -361,8 +370,15 @@ export default async function HomePage() {
         </section>
 
         {/* ── Book a Call ── dark, single contrast section */}
-        <section className="py-20 px-6" style={{ background: '#0f172a' }}>
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+        <section className="py-20 px-6 relative overflow-hidden" style={{ background: '#0f172a' }}>
+          <div className="absolute inset-0 pointer-events-none" style={{
+            backgroundImage: 'linear-gradient(rgba(30,41,59,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(30,41,59,0.7) 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+          }} />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] pointer-events-none" style={{
+            background: 'radial-gradient(circle at 80% 20%, rgba(59,110,232,0.15) 0%, transparent 60%)',
+          }} />
+          <div className="max-w-6xl mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <h2 className="text-2xl font-bold tracking-tight mb-2 text-white">
                 Ready to go further than the research?
