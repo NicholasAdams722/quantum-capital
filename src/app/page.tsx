@@ -90,7 +90,7 @@ export default async function HomePage() {
           }} />
           {/* Dark overlay — heavier on left where text sits */}
           <div className="absolute inset-0" style={{
-            background: 'linear-gradient(105deg, rgba(4,9,26,0.94) 0%, rgba(8,20,46,0.88) 55%, rgba(8,20,46,0.70) 100%)',
+            background: 'linear-gradient(105deg, rgba(4,9,26,0.72) 0%, rgba(8,20,46,0.55) 55%, rgba(8,20,46,0.30) 100%)',
           }} />
           <div className="max-w-6xl mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12 items-start">
