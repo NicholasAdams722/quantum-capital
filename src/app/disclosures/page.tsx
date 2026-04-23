@@ -104,7 +104,7 @@ export default function DisclosuresPage() {
               ))}
             </div>
 
-            <div className="mt-16 p-8 rounded-sm" style={{ background: '#f8fafc', border: '1px solid #e2e8f0' }}>
+            <div className="mt-16 p-8 rounded-sm" style={{ background: '#f5f7ff', border: '1px solid #e2e8f0' }}>
               <p className="text-xs leading-relaxed" style={{ color: '#94a3b8' }}>
                 Quantum Capital is a DBA of Patriot Advisory Group LLC, a registered investment adviser
                 in the State of New Hampshire. Registration does not imply a certain level of skill

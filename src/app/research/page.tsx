@@ -67,7 +67,7 @@ function IssueCard({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex flex-col p-8 rounded-sm transition-all hover:border-[#3b6ee8] hover:shadow-sm bg-white"
+      className="group flex flex-col h-full p-8 rounded-sm transition-all hover:border-[#3b6ee8] hover:shadow-sm bg-white"
       style={{ border: '1px solid #e2e8f0' }}
     >
       <div className="flex items-center justify-between mb-6">
@@ -130,7 +130,7 @@ export default async function ResearchPage() {
         <Divider />
 
         {/* ── Issue Grid ── light gray */}
-        <section className="py-24 px-6" style={{ background: '#f8fafc' }}>
+        <section className="py-24 px-6" style={{ background: '#f5f7ff' }}>
           <div className="max-w-6xl mx-auto">
             <p className="text-xs font-medium uppercase tracking-widest mb-8" style={{ color: '#3b6ee8' }}>
               Archive {liveData && <span style={{ color: '#94a3b8' }}>(pulling live from thequantumletter.com)</span>}
@@ -186,7 +186,7 @@ export default async function ResearchPage() {
                 Subscribe on The Quantum Letter
               </a>
             </div>
-            <div className="p-10 rounded-sm" style={{ background: '#f8fafc', border: '1px solid #e2e8f0' }}>
+            <div className="p-10 rounded-sm" style={{ background: '#f5f7ff', border: '1px solid #e2e8f0' }}>
               <p className="text-xs uppercase tracking-widest mb-6" style={{ color: '#94a3b8' }}>What you get</p>
               <div className="space-y-4">
                 {whatYouGet.map((item) => (

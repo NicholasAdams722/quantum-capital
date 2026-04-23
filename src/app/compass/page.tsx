@@ -4,6 +4,7 @@ import Nav from '@/components/Nav'
 import ComplianceFooter from '@/components/ComplianceFooter'
 import Divider from '@/components/Divider'
 import MetcalfeCalculator from '@/components/MetcalfeCalculator'
+import MetcalfeChart from '@/components/MetcalfeChart'
 
 export const metadata: Metadata = {
   title: 'The Quantum Compass',
@@ -52,7 +53,6 @@ export default function CompassPage() {
             backgroundImage: 'radial-gradient(#e2e8f0 1px, transparent 1px)',
             backgroundSize: '24px 24px',
           }} />
-          {/* Formula watermark */}
           <div className="absolute right-0 top-0 bottom-0 flex items-center pointer-events-none select-none overflow-hidden pr-8" style={{ color: '#f1f5f9' }}>
             <span className="font-black font-mono leading-none" style={{ fontSize: 'clamp(140px, 18vw, 260px)', letterSpacing: '-0.04em' }}>
               n²
@@ -75,10 +75,10 @@ export default function CompassPage() {
 
         <Divider />
 
-        {/* ── The Formula ── light gray with cross pattern */}
-        <section className="py-24 px-6 relative overflow-hidden" style={{ background: '#f8fafc' }}>
+        {/* ── The Formula ── light blue-tinted with cross pattern */}
+        <section className="py-24 px-6 relative overflow-hidden" style={{ background: '#f5f7ff' }}>
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 8v16M8 16h16' stroke='%23e2e8f0' stroke-width='1'/%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 8v16M8 16h16' stroke='%23e0e6f5' stroke-width='1'/%3E%3C/svg%3E")`,
             backgroundSize: '32px 32px',
           }} />
           <div className="max-w-6xl mx-auto relative z-10 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
@@ -93,7 +93,7 @@ export default function CompassPage() {
                 Metcalfe&apos;s Law states that the value of a network is proportional to the square
                 of the number of its connected users. Applied to Ethereum:
               </p>
-              <div className="p-8 mb-6 rounded-sm bg-white" style={{ border: '1px solid #e2e8f0' }}>
+              <div className="p-8 mb-6 rounded-sm bg-white" style={{ border: '1px solid #e0e6f5' }}>
                 <p className="text-3xl font-black mb-4 font-mono" style={{ color: '#1e3a8a' }}>V = k × n²</p>
                 <div className="space-y-2 text-sm" style={{ color: '#475569' }}>
                   <p><span className="font-bold" style={{ color: '#0f172a' }}>V</span> = Network value (market cap)</p>
@@ -116,7 +116,7 @@ export default function CompassPage() {
                   <div
                     key={row.users}
                     className="p-6 rounded-sm bg-white"
-                    style={{ border: '1px solid #e2e8f0' }}
+                    style={{ border: '1px solid #e0e6f5' }}
                   >
                     <p className="text-sm mb-2" style={{ color: '#94a3b8' }}>{row.users}</p>
                     <div className="flex items-center justify-between">
@@ -135,10 +135,29 @@ export default function CompassPage() {
 
         <Divider />
 
-        {/* ── Calculator ── white with graph paper grid */}
-        <section className="py-24 px-6 relative overflow-hidden">
+        {/* ── Metcalfe Curve Chart ── white */}
+        <section className="py-24 px-6">
+          <div className="max-w-6xl mx-auto">
+            <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>
+              The Curve
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 max-w-2xl" style={{ color: '#0f172a' }}>
+              The n² relationship, visualized.
+            </h2>
+            <p className="mb-12 max-w-xl" style={{ color: '#475569' }}>
+              Each price target is a point on the same Metcalfe curve. As daily active addresses
+              grow, the formula accelerates. That acceleration is the thesis.
+            </p>
+            <MetcalfeChart />
+          </div>
+        </section>
+
+        <Divider />
+
+        {/* ── Calculator ── light blue-tinted with graph paper grid */}
+        <section className="py-24 px-6 relative overflow-hidden" style={{ background: '#f5f7ff' }}>
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: 'linear-gradient(#f1f5f9 1px, transparent 1px), linear-gradient(90deg, #f1f5f9 1px, transparent 1px)',
+            backgroundImage: 'linear-gradient(#e0e6f5 1px, transparent 1px), linear-gradient(90deg, #e0e6f5 1px, transparent 1px)',
             backgroundSize: '40px 40px',
           }} />
           <div className="max-w-6xl mx-auto relative z-10">
@@ -158,8 +177,8 @@ export default function CompassPage() {
 
         <Divider />
 
-        {/* ── Price Targets ── light gray */}
-        <section className="py-24 px-6" style={{ background: '#f8fafc' }}>
+        {/* ── Price Targets ── white */}
+        <section className="py-24 px-6">
           <div className="max-w-6xl mx-auto">
             <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>
               Price Targets
@@ -175,7 +194,7 @@ export default function CompassPage() {
             <div className="overflow-x-auto rounded-sm bg-white" style={{ border: '1px solid #e2e8f0' }}>
               <table className="w-full text-left min-w-[600px]">
                 <thead>
-                  <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f8fafc' }}>
+                  <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f5f7ff' }}>
                     <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest" style={{ color: '#94a3b8' }}>Horizon</th>
                     <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest" style={{ color: '#94a3b8' }}>Period</th>
                     <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest" style={{ color: '#94a3b8' }}>Daily Active Addresses</th>
@@ -188,7 +207,7 @@ export default function CompassPage() {
                       key={row.horizon}
                       style={{
                         borderBottom: i < targets.length - 1 ? '1px solid #e2e8f0' : undefined,
-                        background: row.current ? '#f8fafc' : 'white',
+                        background: row.current ? '#f5f7ff' : 'white',
                       }}
                     >
                       <td className="px-6 py-5">
@@ -211,7 +230,7 @@ export default function CompassPage() {
               </table>
             </div>
 
-            <div className="mt-6 p-6 rounded-sm bg-white" style={{ border: '1px solid #e2e8f0' }}>
+            <div className="mt-6 p-6 rounded-sm" style={{ background: '#f5f7ff', border: '1px solid #e0e6f5' }}>
               <p className="text-xs leading-relaxed" style={{ color: '#94a3b8' }}>
                 <strong style={{ color: '#475569' }}>Not investment advice.</strong> These figures
                 represent the mathematical output of Metcalfe&apos;s Law (V = k × n²) applied to
@@ -225,8 +244,8 @@ export default function CompassPage() {
 
         <Divider />
 
-        {/* ── Bessent Multiplier ── white */}
-        <section className="py-24 px-6">
+        {/* ── Bessent Multiplier ── light blue-tinted */}
+        <section className="py-24 px-6" style={{ background: '#f5f7ff' }}>
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
               <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>
@@ -246,7 +265,7 @@ export default function CompassPage() {
                 The formula compounds.
               </p>
             </div>
-            <div className="p-10 rounded-sm" style={{ background: '#f8fafc', border: '1px solid #e2e8f0' }}>
+            <div className="p-10 rounded-sm bg-white" style={{ border: '1px solid #e0e6f5' }}>
               <p className="text-xs uppercase tracking-widest mb-6" style={{ color: '#94a3b8' }}>The chain reaction</p>
               <div className="space-y-4">
                 {chain.map((step, i) => (
@@ -266,7 +285,7 @@ export default function CompassPage() {
         </section>
 
         {/* ── CTA ── dark */}
-        <section className="py-24 px-6 relative overflow-hidden" style={{ background: '#0f172a' }}>
+        <section className="py-24 px-6 relative overflow-hidden" style={{ background: '#0f172a', borderTop: '3px solid #3b6ee8' }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: 'linear-gradient(rgba(30,41,59,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(30,41,59,0.7) 1px, transparent 1px)',
             backgroundSize: '48px 48px',

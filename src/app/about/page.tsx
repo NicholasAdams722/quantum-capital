@@ -82,7 +82,7 @@ export default function AboutPage() {
         <Divider />
 
         {/* ── Mark's bio ── light gray */}
-        <section className="py-24 px-6" style={{ background: '#f8fafc' }}>
+        <section className="py-24 px-6" style={{ background: '#f5f7ff' }}>
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <div>
               <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>
@@ -151,7 +151,7 @@ export default function AboutPage() {
         <Divider />
 
         {/* ── Team ── light gray */}
-        <section className="py-24 px-6" style={{ background: '#f8fafc' }}>
+        <section className="py-24 px-6" style={{ background: '#f5f7ff' }}>
           <div className="max-w-6xl mx-auto">
             <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>The Team</p>
             <h2 className="text-3xl font-bold tracking-tight mb-12" style={{ color: '#0f172a' }}>
@@ -172,7 +172,7 @@ export default function AboutPage() {
         </section>
 
         {/* ── CTA ── dark */}
-        <section className="py-24 px-6 relative overflow-hidden" style={{ background: '#0f172a' }}>
+        <section className="py-24 px-6 relative overflow-hidden" style={{ background: '#0f172a', borderTop: '3px solid #3b6ee8' }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: 'linear-gradient(rgba(30,41,59,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(30,41,59,0.7) 1px, transparent 1px)',
             backgroundSize: '48px 48px',

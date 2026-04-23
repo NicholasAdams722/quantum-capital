@@ -17,7 +17,7 @@ export default function Nav() {
   return (
     <>
       <nav
-        className="fixed top-0 left-0 right-0 z-50 bg-white"
+        className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md"
         style={{ borderBottom: '1px solid #e2e8f0' }}
       >
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
@@ -92,7 +92,7 @@ export default function Nav() {
         {/* Mobile menu dropdown */}
         {open && (
           <div
-            className="md:hidden px-6 pb-6 pt-2 flex flex-col gap-1 bg-white"
+            className="md:hidden px-6 pb-6 pt-2 flex flex-col gap-1 bg-white/95 backdrop-blur-md"
             style={{ borderTop: '1px solid #e2e8f0' }}
           >
             {links.map(l => (

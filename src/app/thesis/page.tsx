@@ -57,7 +57,7 @@ export default function ThesisPage() {
         <Divider />
 
         {/* ── Pillar 01 ── light gray */}
-        <section className="py-24 px-6" style={{ background: '#f8fafc' }}>
+        <section className="py-24 px-6" style={{ background: '#f5f7ff' }}>
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <div>
               <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>01</p>
@@ -137,7 +137,7 @@ export default function ThesisPage() {
         <Divider />
 
         {/* ── Pillar 03 ── light gray */}
-        <section className="py-24 px-6" style={{ background: '#f8fafc' }}>
+        <section className="py-24 px-6" style={{ background: '#f5f7ff' }}>
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mb-16">
               <div>
@@ -235,8 +235,39 @@ export default function ThesisPage() {
 
         <Divider />
 
+        {/* ── Pull quote ── white */}
+        <section className="py-20 px-6">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+              <div className="md:col-span-2">
+                <p className="text-3xl md:text-4xl font-black tracking-tight leading-tight mb-4" style={{ color: '#0f172a' }}>
+                  The market is pricing only{' '}
+                  <span style={{ color: '#3b6ee8' }}>2 of 7</span>{' '}
+                  TAM categories. The thesis prices all seven.
+                </p>
+                <p className="leading-relaxed" style={{ color: '#475569' }}>
+                  Global derivatives: $700T. Global payments: $150T. AI agent economy: incalculable.
+                  None of that is in the price today.
+                </p>
+              </div>
+              <div className="flex flex-col gap-4">
+                <div className="p-6 rounded-sm" style={{ background: '#f5f7ff', border: '1px solid #e0e6f5' }}>
+                  <p className="text-4xl font-black mb-1" style={{ color: '#3b6ee8' }}>$700T</p>
+                  <p className="text-xs" style={{ color: '#94a3b8' }}>Global derivatives market</p>
+                </div>
+                <div className="p-6 rounded-sm" style={{ background: '#f5f7ff', border: '1px solid #e0e6f5' }}>
+                  <p className="text-4xl font-black mb-1" style={{ color: '#1e3a8a' }}>2 / 7</p>
+                  <p className="text-xs" style={{ color: '#94a3b8' }}>TAM categories live today</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <Divider />
+
         {/* ── TAM ── light gray */}
-        <section className="py-24 px-6" style={{ background: '#f8fafc' }}>
+        <section className="py-24 px-6" style={{ background: '#f5f7ff' }}>
           <div className="max-w-6xl mx-auto">
             <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>
               Total Addressable Market
@@ -251,7 +282,7 @@ export default function ThesisPage() {
             <div className="overflow-hidden rounded-sm bg-white" style={{ border: '1px solid #e2e8f0' }}>
               <table className="w-full text-left">
                 <thead>
-                  <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f8fafc' }}>
+                  <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f5f7ff' }}>
                     <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest" style={{ color: '#94a3b8' }}>Market</th>
                     <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest" style={{ color: '#94a3b8' }}>Size</th>
                     <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest" style={{ color: '#94a3b8' }}>Status</th>
@@ -284,7 +315,7 @@ export default function ThesisPage() {
         </section>
 
         {/* ── CTA ── dark */}
-        <section className="py-24 px-6 relative overflow-hidden" style={{ background: '#0f172a' }}>
+        <section className="py-24 px-6 relative overflow-hidden" style={{ background: '#0f172a', borderTop: '3px solid #3b6ee8' }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: 'linear-gradient(rgba(30,41,59,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(30,41,59,0.7) 1px, transparent 1px)',
             backgroundSize: '48px 48px',

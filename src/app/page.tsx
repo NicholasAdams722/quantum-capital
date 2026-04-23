@@ -80,52 +80,97 @@ export default async function HomePage() {
 
       <main>
 
-        {/* ── Hero ── white, full-bleed typography */}
+        {/* ── Hero ── white, full-bleed typography with compass anchor */}
         <section className="pt-40 pb-32 px-6 relative overflow-hidden">
-          {/* Dot grid texture */}
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: 'radial-gradient(#e2e8f0 1px, transparent 1px)',
             backgroundSize: '24px 24px',
           }} />
           <div className="max-w-6xl mx-auto relative z-10">
-            <p className="text-xs font-medium uppercase tracking-widest mb-6" style={{ color: '#3b6ee8' }}>
-              Institutional Ethereum Research
-            </p>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none mb-8 max-w-5xl" style={{ color: '#0f172a' }}>
-              Ethereum is priced like a speculation.{' '}
-              <span style={{ color: '#3b6ee8' }}>It&apos;s being built like infrastructure.</span>
-            </h1>
-            <p className="text-lg md:text-xl max-w-2xl leading-relaxed mb-12" style={{ color: '#475569' }}>
-              The Quantum Letter teaches you exactly why, through Metcalfe&apos;s Law, on-chain
-              data, and the same valuation methodology used by institutional Ethereum analysts.
-              Free. No hype.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="https://thequantumletter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center bg-[#3b6ee8] hover:bg-[#1e3a8a] text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
-              >
-                Read The Quantum Letter →
-              </a>
-              <Link
-                href="/thesis"
-                className="inline-flex items-center justify-center border font-semibold px-8 py-4 rounded-full transition-colors text-base"
-                style={{ borderColor: '#e2e8f0', color: '#475569' }}
-              >
-                Explore the Thesis
-              </Link>
+            <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12 items-start">
+              {/* Left: headline + CTAs */}
+              <div>
+                <p className="text-xs font-medium uppercase tracking-widest mb-6" style={{ color: '#3b6ee8' }}>
+                  Institutional Ethereum Research
+                </p>
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-8 max-w-2xl" style={{ color: '#0f172a' }}>
+                  Ethereum is priced like a speculation.{' '}
+                  <span style={{ color: '#3b6ee8' }}>It&apos;s being built like infrastructure.</span>
+                </h1>
+                <p className="text-lg md:text-xl max-w-xl leading-relaxed mb-12" style={{ color: '#475569' }}>
+                  The Quantum Letter teaches you exactly why, through Metcalfe&apos;s Law, on-chain
+                  data, and the same valuation methodology used by institutional Ethereum analysts.
+                  Free. No hype.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <a
+                    href="https://thequantumletter.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center bg-[#3b6ee8] hover:bg-[#1e3a8a] text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
+                  >
+                    Read The Quantum Letter →
+                  </a>
+                  <Link
+                    href="/thesis"
+                    className="inline-flex items-center justify-center border font-semibold px-8 py-4 rounded-full transition-colors text-base"
+                    style={{ borderColor: '#e2e8f0', color: '#475569' }}
+                  >
+                    Explore the Thesis
+                  </Link>
+                </div>
+              </div>
+
+              {/* Right: mini Quantum Compass card */}
+              <div className="rounded-sm overflow-hidden" style={{ border: '1px solid #e2e8f0' }}>
+                <div className="px-5 py-4" style={{ background: '#f5f7ff', borderBottom: '1px solid #e2e8f0' }}>
+                  <p className="text-xs font-medium uppercase tracking-widest mb-0.5" style={{ color: '#3b6ee8' }}>
+                    The Quantum Compass
+                  </p>
+                  <p className="text-xs font-mono" style={{ color: '#94a3b8' }}>V = k × n² · k = $565</p>
+                </div>
+                <table className="w-full text-left bg-white">
+                  <thead>
+                    <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
+                      <th className="px-5 py-3 text-xs font-medium uppercase tracking-widest" style={{ color: '#94a3b8' }}>Horizon</th>
+                      <th className="px-5 py-3 text-xs font-medium uppercase tracking-widest" style={{ color: '#94a3b8' }}>DAA</th>
+                      <th className="px-5 py-3 text-xs font-medium uppercase tracking-widest" style={{ color: '#94a3b8' }}>Target</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {compassData.map((row, i) => (
+                      <tr
+                        key={row.horizon}
+                        style={{ borderBottom: i < compassData.length - 1 ? '1px solid #f1f5f9' : undefined }}
+                      >
+                        <td className="px-5 py-3 text-sm" style={{ color: row.current ? '#94a3b8' : '#0f172a' }}>
+                          {row.horizon}
+                          {row.current && <span className="ml-1.5 text-xs px-1.5 py-0.5 rounded-full" style={{ background: '#f1f5f9', color: '#94a3b8' }}>now</span>}
+                        </td>
+                        <td className="px-5 py-3 text-xs font-mono" style={{ color: '#475569' }}>{row.daa}</td>
+                        <td className="px-5 py-3 text-sm font-bold" style={{ color: i === compassData.length - 1 ? '#3b6ee8' : '#0f172a' }}>
+                          {row.target}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+                <div className="px-5 py-3" style={{ borderTop: '1px solid #e2e8f0', background: '#f5f7ff' }}>
+                  <Link href="/compass" className="text-xs font-medium transition-colors" style={{ color: '#3b6ee8' }}>
+                    See full analysis + interactive calculator →
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         <Divider />
 
-        {/* ── Core Argument ── light gray with cross pattern */}
-        <section className="py-24 px-6 relative overflow-hidden" style={{ background: '#f8fafc' }}>
+        {/* ── Core Argument ── light blue-tinted with cross pattern */}
+        <section className="py-24 px-6 relative overflow-hidden" style={{ background: '#f5f7ff' }}>
           <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 8v16M8 16h16' stroke='%23e2e8f0' stroke-width='1'/%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 8v16M8 16h16' stroke='%23e0e6f5' stroke-width='1'/%3E%3C/svg%3E")`,
             backgroundSize: '32px 32px',
           }} />
           <div className="max-w-6xl mx-auto relative z-10">
@@ -141,7 +186,7 @@ export default async function HomePage() {
               current price is where the education lives.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="p-10 rounded-sm bg-white" style={{ border: '1px solid #e2e8f0', borderTop: '3px solid #94a3b8' }}>
+              <div className="p-10 rounded-sm bg-white" style={{ border: '1px solid #e0e6f5', borderTop: '3px solid #94a3b8' }}>
                 <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#94a3b8' }}>Market Price Today</p>
                 <p className="text-5xl font-black mb-2" style={{ color: '#0f172a' }}>~$2,350</p>
                 <p className="text-sm" style={{ color: '#94a3b8' }}>What the market sees</p>
@@ -199,7 +244,7 @@ export default async function HomePage() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex flex-col p-8 rounded-sm transition-all duration-200 hover:border-[#3b6ee8] hover:shadow-sm bg-white"
+                  className="group flex flex-col h-full p-8 rounded-sm transition-all duration-200 hover:border-[#3b6ee8] hover:shadow-sm bg-white"
                   style={{ border: '1px solid #e2e8f0' }}
                 >
                   <div className="flex items-center justify-between mb-5">
@@ -224,8 +269,8 @@ export default async function HomePage() {
 
         <Divider />
 
-        {/* ── Why Ethereum ── light gray */}
-        <section className="py-24 px-6" style={{ background: '#f8fafc' }}>
+        {/* ── Why Ethereum ── light blue-tinted */}
+        <section className="py-24 px-6" style={{ background: '#f5f7ff' }}>
           <div className="max-w-6xl mx-auto">
             <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>
               Why Ethereum
@@ -241,7 +286,7 @@ export default async function HomePage() {
                 <div
                   key={pillar.number}
                   className="p-10 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-10 items-start rounded-sm bg-white"
-                  style={{ border: '1px solid #e2e8f0' }}
+                  style={{ border: '1px solid #e0e6f5' }}
                 >
                   <div>
                     <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>
@@ -292,7 +337,7 @@ export default async function HomePage() {
             <div className="overflow-hidden rounded-sm" style={{ border: '1px solid #e2e8f0' }}>
               <table className="w-full text-left">
                 <thead>
-                  <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f8fafc' }}>
+                  <tr style={{ borderBottom: '1px solid #e2e8f0', background: '#f5f7ff' }}>
                     <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest" style={{ color: '#94a3b8' }}>Horizon</th>
                     <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest" style={{ color: '#94a3b8' }}>Daily Active Addresses</th>
                     <th className="px-6 py-4 text-xs font-medium uppercase tracking-widest" style={{ color: '#94a3b8' }}>Metcalfe Output</th>
@@ -304,7 +349,7 @@ export default async function HomePage() {
                       key={row.horizon}
                       style={{
                         borderBottom: i < compassData.length - 1 ? '1px solid #e2e8f0' : undefined,
-                        background: row.current ? '#f8fafc' : 'white',
+                        background: row.current ? '#f5f7ff' : 'white',
                       }}
                     >
                       <td className="px-6 py-5 text-sm font-medium" style={{ color: '#0f172a' }}>
@@ -316,7 +361,7 @@ export default async function HomePage() {
                         )}
                       </td>
                       <td className="px-6 py-5 text-sm font-mono" style={{ color: '#475569' }}>{row.daa}</td>
-                      <td className={`px-6 py-5 text-xl font-black`} style={{ color: i === compassData.length - 1 ? '#3b6ee8' : '#0f172a' }}>
+                      <td className="px-6 py-5 text-xl font-black" style={{ color: i === compassData.length - 1 ? '#3b6ee8' : '#0f172a' }}>
                         {row.target}
                       </td>
                     </tr>
@@ -337,8 +382,8 @@ export default async function HomePage() {
 
         <Divider />
 
-        {/* ── About Mark ── light gray */}
-        <section className="py-24 px-6" style={{ background: '#f8fafc' }}>
+        {/* ── About Mark ── light blue-tinted */}
+        <section className="py-24 px-6" style={{ background: '#f5f7ff' }}>
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
               <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>
@@ -371,7 +416,7 @@ export default async function HomePage() {
                 { value: 'ChFC', label: 'Chartered Financial Consultant' },
                 { value: '16', label: 'Quantum Letter issues' },
               ].map((stat) => (
-                <div key={stat.label} className="p-8 rounded-sm bg-white" style={{ border: '1px solid #e2e8f0' }}>
+                <div key={stat.label} className="p-8 rounded-sm bg-white" style={{ border: '1px solid #e0e6f5' }}>
                   <p className="text-3xl font-black mb-1" style={{ color: '#1e3a8a' }}>{stat.value}</p>
                   <p className="text-xs" style={{ color: '#94a3b8' }}>{stat.label}</p>
                 </div>
@@ -381,7 +426,7 @@ export default async function HomePage() {
         </section>
 
         {/* ── Book a Call ── dark, single contrast section */}
-        <section className="py-20 px-6 relative overflow-hidden" style={{ background: '#0f172a' }}>
+        <section className="py-20 px-6 relative overflow-hidden" style={{ background: '#0f172a', borderTop: '3px solid #3b6ee8' }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: 'linear-gradient(rgba(30,41,59,0.7) 1px, transparent 1px), linear-gradient(90deg, rgba(30,41,59,0.7) 1px, transparent 1px)',
             backgroundSize: '48px 48px',
