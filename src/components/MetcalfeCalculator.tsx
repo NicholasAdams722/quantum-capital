@@ -82,7 +82,7 @@ export default function MetcalfeCalculator() {
             {formatPct(pctPrice)} vs. today
           </span>
           <span
-            className="text-sm px-4 py-1.5 rounded-full transition-opacity duration-150"
+            className="text-sm px-4 py-1.5 rounded-full transition-opacity duration-150 whitespace-nowrap"
             style={{
               background: '#0d1b3e',
               color: '#6b9bf5',
@@ -90,7 +90,7 @@ export default function MetcalfeCalculator() {
               pointerEvents: Math.abs(pctDaa) > 0.5 ? 'auto' : 'none',
             }}
           >
-            {formatPct(pctDaa)} users → {formatPct(pctPrice)} price &nbsp;
+            {formatPct(pctDaa)} users → {formatPct(pctPrice)} price{' '}
             <span style={{ color: '#4a5578' }}>(n² effect)</span>
           </span>
         </div>
