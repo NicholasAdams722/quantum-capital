@@ -15,39 +15,42 @@ export const metadata: Metadata = {
   },
 }
 
+// Placeholder data — replace with Ghost Content API fetch when wired.
+// All links point to thequantumletter.com until real slugs are available from the API.
+// Ghost API: GET /ghost/api/content/posts/?key={GHOST_CONTENT_API_KEY}&limit=all&fields=title,slug,excerpt,published_at,reading_time
 const issues = [
   {
-    issue: 'Issue 16', slug: 'eth-research-april-17-2026', date: 'April 17, 2026',
+    issue: 'Issue 16', date: 'April 17, 2026',
     title: 'ETH Research: ETHA, SBET, and the Portfolio Positioning Case',
     excerpt: 'A breakdown of the three instruments we use for Ethereum exposure — and why the structure matters as much as the thesis.',
     readTime: '8 min read',
   },
   {
-    issue: 'Issue 15', slug: 'clarity-act-commodity-status', date: 'April 3, 2026',
+    issue: 'Issue 15', date: 'April 3, 2026',
     title: 'The CLARITY Act and What Commodity Status Actually Means',
     excerpt: 'When Ethereum goes from "legal" to "law," risk is reduced by at least 50%. Here is what the legislation does and when it lands.',
     readTime: '6 min read',
   },
   {
-    issue: 'Issue 14', slug: 'bessent-3-trillion-metcalfe', date: 'March 20, 2026',
+    issue: 'Issue 14', date: 'March 20, 2026',
     title: "Bessent's $3 Trillion and the Metcalfe Multiplier",
     excerpt: "Every new stablecoin dollar is a new Metcalfe user. Every new user increases n. Every increase in n increases n² exponentially.",
     readTime: '7 min read',
   },
   {
-    issue: 'Issue 13', slug: 'pectra-eip-7702-ai-wallets', date: 'March 6, 2026',
+    issue: 'Issue 13', date: 'March 6, 2026',
     title: 'Pectra, EIP-7702, and the AI Agent Wallet Stack',
     excerpt: 'The upgrade that makes Ethereum wallets compatible with autonomous AI agents is live. Here is what it means for network value.',
     readTime: '9 min read',
   },
   {
-    issue: 'Issue 12', slug: 'ultrasound-money-mechanics', date: 'February 20, 2026',
+    issue: 'Issue 12', date: 'February 20, 2026',
     title: 'Ultrasound Money: The Supply Mechanics Bitcoin Cannot Match',
     excerpt: 'Bitcoin is sound money. Ethereum is ultrasound money. The difference is demand-driven supply destruction — and it is already running.',
     readTime: '10 min read',
   },
   {
-    issue: 'Issue 11', slug: 'evm-windows-blockchain', date: 'February 5, 2026',
+    issue: 'Issue 11', date: 'February 5, 2026',
     title: 'The EVM is the Windows of Blockchain',
     excerpt: 'Eleven years of network effects. 31,000 developers. 85% of all blockchain traffic. The moat is not a bet — it is an observation.',
     readTime: '8 min read',
@@ -113,8 +116,8 @@ export default function ResearchPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {issues.map((item) => (
                 <a
-                  key={item.slug}
-                  href={`https://thequantumletter.com/${item.slug}`}
+                  key={item.issue}
+                  href="https://thequantumletter.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group flex flex-col p-8 rounded-sm transition-all hover:shadow-lg"
