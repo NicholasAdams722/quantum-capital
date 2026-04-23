@@ -29,7 +29,7 @@ const sections = [
   {
     title: 'Projections and Price Targets',
     content: [
-      'All price targets and projections published on this website, including those derived from the Quantum Compass, represent the mathematical output of Metcalfe\'s Law (V = k × n²) applied to Ethereum network data. They are projections based on a mathematical formula — not predictions, guarantees, or investment recommendations.',
+      'All price targets and projections published on this website, including those derived from the Quantum Compass, represent the mathematical output of Metcalfe\'s Law (V = k × n²) applied to Ethereum network data. They are projections based on a mathematical formula, not predictions, guarantees, or investment recommendations.',
       'The formula, calibration constant (k = $565), and methodology are sourced from the CFA Institute Cryptoassets Valuation Guide. The same methodology is used by Grayscale (ETHE) and Fidelity (FETH) analysts. Source attribution does not imply endorsement by those institutions of Quantum Capital or its outputs.',
       'Actual results may differ materially from projections. Do not make investment decisions based solely on mathematical models or projections published here.',
     ],
@@ -76,7 +76,7 @@ export default function DisclosuresPage() {
             </p>
             <h1 className="text-4xl md:text-5xl font-black tracking-tight mb-4" style={{ color: '#0f172a' }}>Disclosures</h1>
             <p style={{ color: '#475569' }}>
-              Quantum Capital is a DBA of Patriot Advisory Group LLC — State-registered RIA, New Hampshire
+              Quantum Capital is a DBA of Patriot Advisory Group LLC, State-registered RIA, New Hampshire
             </p>
           </div>
         </section>

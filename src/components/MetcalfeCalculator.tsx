@@ -221,7 +221,7 @@ export default function MetcalfeCalculator() {
             <div className="flex items-baseline justify-between mb-5">
               <div>
                 <p className="text-sm font-semibold mb-1" style={{ color: '#0f172a' }}>
-                  k — network coefficient
+                  k: network coefficient
                 </p>
                 <p className="text-xs" style={{ color: '#94a3b8' }}>
                   CFA Institute baseline: $565 (April 2026)

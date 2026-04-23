@@ -42,7 +42,7 @@ export default function ThesisPage() {
               Ethereum is not priced as what it is being built to be.
             </h1>
             <p className="text-xl max-w-2xl leading-relaxed" style={{ color: '#475569' }}>
-              It is being built as the settlement layer for the global machine economy — the
+              It is being built as the settlement layer for the global machine economy: the
               operating system every AI agent, tokenized asset, and programmable dollar will
               settle on. The gap between that reality and the current price is the investment window.
             </p>
@@ -65,7 +65,7 @@ export default function ThesisPage() {
               <p className="leading-relaxed mb-6" style={{ color: '#475569' }}>
                 Just as every application built on Windows made Windows more valuable, every chain,
                 wallet, and protocol built on EVM makes ETH more valuable. The moat is not
-                speculation — it is 11 years of accumulated network effects that cannot be replicated.
+                speculation. It is 11 years of accumulated network effects that cannot be replicated.
               </p>
               <p className="leading-relaxed" style={{ color: '#475569' }}>
                 31,000 active developers. 85% of all blockchain traffic. The standard is set.
@@ -94,14 +94,14 @@ export default function ThesisPage() {
               <div className="p-10" style={{ borderBottom: '1px solid #e2e8f0' }}>
                 <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#94a3b8' }}>Bitcoin (Sound Money)</p>
                 <p className="text-sm leading-relaxed" style={{ color: '#475569' }}>
-                  Fixed supply of 21M. Scarcity by schedule — halvings reduce new issuance on a
+                  Fixed supply of 21M. Scarcity by schedule: halvings reduce new issuance on a
                   predetermined timeline. Supply is predictable and independent of usage.
                 </p>
               </div>
               <div className="p-10" style={{ borderTop: '3px solid #3b6ee8' }}>
                 <p className="text-xs uppercase tracking-widest mb-3" style={{ color: '#3b6ee8' }}>Ethereum (Ultrasound Money)</p>
                 <p className="text-sm leading-relaxed" style={{ color: '#475569' }}>
-                  Supply is demand-driven. EIP-1559 burns ETH with every transaction — permanently
+                  Supply is demand-driven. EIP-1559 burns ETH with every transaction, permanently
                   destroyed. The Merge cut new issuance 88%. More usage = less supply. It is the
                   only commodity in the world with this property.
                 </p>
@@ -135,8 +135,8 @@ export default function ThesisPage() {
                   The Venmo Moment is 2027–2028
                 </h2>
                 <p className="leading-relaxed mb-6" style={{ color: '#475569' }}>
-                  By 2027–2028, a millennial opens an app that works exactly like Venmo — instant,
-                  free, familiar — and it runs on Ethereum without them knowing. The infrastructure
+                  By 2027–2028, a millennial opens an app that works exactly like Venmo: instant,
+                  free, familiar. And it runs on Ethereum without them knowing. The infrastructure
                   that makes this possible is complete or completing right now.
                 </p>
                 <p className="leading-relaxed" style={{ color: '#475569' }}>
@@ -145,7 +145,7 @@ export default function ThesisPage() {
               </div>
               <div>
                 <p className="text-xs font-medium uppercase tracking-widest mb-6" style={{ color: '#94a3b8' }}>
-                  Infrastructure stack — status
+                  Infrastructure stack: status
                 </p>
                 <div className="space-y-3">
                   {[

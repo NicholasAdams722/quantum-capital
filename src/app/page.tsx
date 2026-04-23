@@ -5,9 +5,9 @@ import ComplianceFooter from '@/components/ComplianceFooter'
 import { getPosts, formatDate, issueLabel, isGhostConfigured, type GhostPost } from '@/lib/ghost'
 
 export const metadata: Metadata = {
-  title: 'Quantum Capital — Institutional Ethereum Research & Education',
+  title: 'Quantum Capital: Institutional Ethereum Research & Education',
   description:
-    "Learn why Ethereum is undervalued. Mark Berube, ChFC, applies Metcalfe's Law to Ethereum network data — the same methodology used by Grayscale and Fidelity analysts. Free research through The Quantum Letter.",
+    "Learn why Ethereum is undervalued. Mark Berube, ChFC, applies Metcalfe's Law to Ethereum network data using the same methodology used by Grayscale and Fidelity analysts. Free research through The Quantum Letter.",
   alternates: { canonical: 'https://quantumcapital.com' },
 }
 
@@ -29,14 +29,14 @@ const pillars = [
   {
     number: '02',
     title: 'Ethereum is Ultrasound Money',
-    body: 'EIP-1559 burns ETH with every transaction — permanently. The Merge cut new issuance 88%. As usage increases, supply decreases. The only commodity in the world with this property.',
+    body: 'EIP-1559 burns ETH with every transaction, permanently. The Merge cut new issuance 88%. As usage increases, supply decreases. The only commodity in the world with this property.',
     stat: '88%',
     statLabel: 'reduction in new issuance post-Merge',
   },
   {
     number: '03',
     title: 'The Venmo Moment is 2027–2028',
-    body: 'Smart wallets, sub-cent fees, ZK rollups, AI-compatible wallets — the infrastructure is complete or completing. By 2027–2028, millions open an app that runs on Ethereum without knowing it.',
+    body: 'Smart wallets, sub-cent fees, ZK rollups, AI-compatible wallets. The infrastructure is complete or completing. By 2027–2028, millions open an app that runs on Ethereum without knowing it.',
     stat: '40M',
     statLabel: 'smart wallet accounts live today',
   },
@@ -46,7 +46,7 @@ const FALLBACK_ISSUES = [
   {
     label: 'Issue 16', date: 'April 17, 2026', href: 'https://thequantumletter.com',
     title: 'ETH Research: ETHA, SBET, and the Portfolio Positioning Case',
-    excerpt: 'A breakdown of the three instruments used for Ethereum exposure — and why structure matters as much as the thesis.',
+    excerpt: 'A breakdown of the three instruments used for Ethereum exposure and why structure matters as much as the thesis.',
   },
   {
     label: 'Issue 15', date: 'April 3, 2026', href: 'https://thequantumletter.com',
@@ -90,7 +90,7 @@ export default async function HomePage() {
               <span style={{ color: '#3b6ee8' }}>It&apos;s being built like infrastructure.</span>
             </h1>
             <p className="text-lg md:text-xl max-w-2xl leading-relaxed mb-12" style={{ color: '#475569' }}>
-              The Quantum Letter teaches you exactly why — through Metcalfe&apos;s Law, on-chain
+              The Quantum Letter teaches you exactly why, through Metcalfe&apos;s Law, on-chain
               data, and the same valuation methodology used by institutional Ethereum analysts.
               Free. No hype.
             </p>
@@ -124,7 +124,7 @@ export default async function HomePage() {
               The market prices what is live today. The thesis prices what is being built.
             </h2>
             <p className="max-w-2xl leading-relaxed mb-16" style={{ color: '#475569' }}>
-              Ethereum is the settlement layer for the global machine economy — every AI agent,
+              Ethereum is the settlement layer for the global machine economy: every AI agent,
               tokenized asset, and programmable dollar. The gap between that reality and the
               current price is where the education lives.
             </p>
@@ -218,7 +218,7 @@ export default async function HomePage() {
               Three things most people don&apos;t know about Ethereum.
             </h2>
             <p className="mb-16 max-w-xl leading-relaxed" style={{ color: '#475569' }}>
-              The thesis rests on three structural advantages already in place — not roadmap promises.
+              The thesis rests on three structural advantages already in place, not roadmap promises.
             </p>
             <div className="space-y-4">
               {pillars.map((pillar) => (
@@ -265,7 +265,7 @@ export default async function HomePage() {
               <span className="font-mono font-semibold px-2 py-0.5 rounded text-sm" style={{ background: '#f1f5f9', color: '#0f172a' }}>
                 V = k × n²
               </span>
-              {' '}— where <strong>n</strong> = daily active addresses, <strong>k</strong> = $565
+              {' '}where <strong>n</strong> = daily active addresses, <strong>k</strong> = $565
             </p>
             <p className="text-xs mb-12" style={{ color: '#94a3b8' }}>
               Source: CFA Institute Cryptoassets Valuation Guide. Same methodology used by Grayscale (ETHE) and Fidelity (FETH) analysts.
@@ -307,7 +307,7 @@ export default async function HomePage() {
               </table>
             </div>
             <p className="text-xs mt-4 max-w-2xl" style={{ color: '#94a3b8' }}>
-              Mathematical outputs of Metcalfe&apos;s Law — projections, not predictions or guarantees. Not investment advice.
+              Mathematical outputs of Metcalfe&apos;s Law: projections, not predictions or guarantees. Not investment advice.
             </p>
             <div className="mt-8">
               <Link href="/compass" className="text-sm font-medium transition-colors" style={{ color: '#3b6ee8' }}>
@@ -330,7 +330,7 @@ export default async function HomePage() {
               <p className="leading-relaxed mb-6" style={{ color: '#475569' }}>
                 Mark Berube is a Chartered Financial Consultant (ChFC) with 22+ years of advisory
                 experience and approximately $54M in assets under management. The Quantum Compass
-                is his framework — Metcalfe&apos;s Law applied to Ethereum network data.
+                is his framework: Metcalfe&apos;s Law applied to Ethereum network data.
               </p>
               <blockquote className="border-l-4 pl-6 mb-8" style={{ borderColor: '#3b6ee8' }}>
                 <p className="italic leading-relaxed" style={{ color: '#475569' }}>
@@ -338,7 +338,7 @@ export default async function HomePage() {
                   projection, I don&apos;t need you to believe me. It&apos;s true. Go do the math
                   yourself.&rdquo;
                 </p>
-                <p className="text-xs mt-3" style={{ color: '#94a3b8' }}>— Mark Berube, ChFC</p>
+                <p className="text-xs mt-3" style={{ color: '#94a3b8' }}>Mark Berube, ChFC</p>
               </blockquote>
               <Link href="/about" className="text-sm font-medium transition-colors" style={{ color: '#3b6ee8' }}>
                 Learn more about Mark →
@@ -368,7 +368,7 @@ export default async function HomePage() {
                 Ready to go further than the research?
               </h2>
               <p className="text-sm" style={{ color: '#64748b' }}>
-                For investors with $250K+ who want managed Ethereum exposure — book a call with Mark.
+                For investors with $250K+ who want managed Ethereum exposure. Book a call with Mark.
               </p>
             </div>
             <Link

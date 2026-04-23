@@ -6,7 +6,7 @@ import ComplianceFooter from '@/components/ComplianceFooter'
 export const metadata: Metadata = {
   title: 'About Mark Berube',
   description:
-    'Mark Berube, ChFC — Founder and President of Quantum Capital. 22+ years as a financial advisor, ~$54M AUM, creator of the Quantum Compass Metcalfe valuation framework.',
+    'Mark Berube, ChFC, Founder and President of Quantum Capital. 22+ years as a financial advisor, ~$54M AUM, creator of the Quantum Compass Metcalfe valuation framework.',
   alternates: { canonical: 'https://quantumcapital.com/about' },
   openGraph: {
     title: 'About Mark Berube | Quantum Capital',
@@ -86,7 +86,7 @@ export default function AboutPage() {
               </h2>
               <p className="leading-relaxed mb-6" style={{ color: '#475569' }}>
                 Mark has advised clients for over 22 years. He holds the Chartered Financial
-                Consultant (ChFC) designation — one of the most comprehensive financial planning
+                Consultant (ChFC) designation, one of the most comprehensive financial planning
                 credentials available. He manages approximately $54M in assets through Quantum Capital,
                 a DBA of Patriot Advisory Group LLC and a state-registered RIA in New Hampshire.
               </p>
@@ -101,7 +101,7 @@ export default function AboutPage() {
                   projection, I don&apos;t need you to believe me. It&apos;s true. Go do the math
                   yourself.&rdquo;
                 </p>
-                <p className="text-xs mt-3" style={{ color: '#94a3b8' }}>— Mark Berube, ChFC</p>
+                <p className="text-xs mt-3" style={{ color: '#94a3b8' }}>Mark Berube, ChFC</p>
               </blockquote>
               <Link
                 href="/book"

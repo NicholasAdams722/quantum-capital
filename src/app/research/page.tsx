@@ -4,9 +4,9 @@ import ComplianceFooter from '@/components/ComplianceFooter'
 import { getPosts, formatDate, issueLabel, isGhostConfigured, type GhostPost } from '@/lib/ghost'
 
 export const metadata: Metadata = {
-  title: 'Research — The Quantum Letter',
+  title: 'Research: The Quantum Letter',
   description:
-    'The Quantum Letter archive. Institutional-grade Ethereum research from Mark Berube, ChFC — free, published regularly, no hype.',
+    'The Quantum Letter archive. Institutional-grade Ethereum research from Mark Berube, ChFC. Free, published regularly, no hype.',
   alternates: { canonical: 'https://quantumcapital.com/research' },
   openGraph: {
     title: 'Research | Quantum Capital',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
 const FALLBACK_ISSUES = [
   {
     title: 'ETH Research: ETHA, SBET, and the Portfolio Positioning Case',
-    excerpt: 'A breakdown of the three instruments we use for Ethereum exposure — and why the structure matters as much as the thesis.',
+    excerpt: 'A breakdown of the three instruments we use for Ethereum exposure, and why the structure matters as much as the thesis.',
     date: 'April 17, 2026', label: 'Issue 16', readTime: '8 min read',
   },
   {
@@ -38,12 +38,12 @@ const FALLBACK_ISSUES = [
   },
   {
     title: 'Ultrasound Money: The Supply Mechanics Bitcoin Cannot Match',
-    excerpt: 'Bitcoin is sound money. Ethereum is ultrasound money. The difference is demand-driven supply destruction — and it is already running.',
+    excerpt: 'Bitcoin is sound money. Ethereum is ultrasound money. The difference is demand-driven supply destruction, and it is already running.',
     date: 'February 20, 2026', label: 'Issue 12', readTime: '10 min read',
   },
   {
     title: 'The EVM is the Windows of Blockchain',
-    excerpt: 'Eleven years of network effects. 31,000 developers. 85% of all blockchain traffic. The moat is not a bet — it is an observation.',
+    excerpt: 'Eleven years of network effects. 31,000 developers. 85% of all blockchain traffic. The moat is not a bet. It is an observation.',
     date: 'February 5, 2026', label: 'Issue 11', readTime: '8 min read',
   },
 ]
@@ -53,7 +53,7 @@ const whatYouGet = [
   'Regulatory catalyst tracking (CLARITY Act, SEC)',
   'Infrastructure milestone coverage (EIPs, rollups)',
   "Bessent stablecoin thesis and on-chain verification",
-  'Portfolio positioning context — ETHA, SBET, BMNR',
+  'Portfolio positioning context: ETHA, SBET, BMNR',
 ]
 
 function IssueCard({
@@ -126,7 +126,7 @@ export default async function ResearchPage() {
         <section className="py-24 px-6" style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
           <div className="max-w-6xl mx-auto">
             <p className="text-xs font-medium uppercase tracking-widest mb-8" style={{ color: '#3b6ee8' }}>
-              Archive {liveData && <span style={{ color: '#94a3b8' }}>— pulling live from thequantumletter.com</span>}
+              Archive {liveData && <span style={{ color: '#94a3b8' }}>(pulling live from thequantumletter.com)</span>}
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
               {liveData
@@ -165,7 +165,7 @@ export default async function ResearchPage() {
                 Get new issues in your inbox.
               </h2>
               <p className="leading-relaxed mb-8" style={{ color: '#475569' }}>
-                The Quantum Letter is published on thequantumletter.com — free, no paywall.
+                The Quantum Letter is published on thequantumletter.com. Free, no paywall.
                 Subscribe to get each issue delivered when Mark publishes it.
               </p>
               <a

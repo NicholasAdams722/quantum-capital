@@ -21,11 +21,11 @@ const BASE_URL = 'https://quantumcapital.com'
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'Quantum Capital — Institutional Ethereum Research & Managed Accounts',
+    default: 'Quantum Capital : Institutional Ethereum Research & Managed Accounts',
     template: '%s | Quantum Capital',
   },
   description:
-    'Quantum Capital applies Metcalfe\'s Law to Ethereum — the same methodology used by Grayscale and Fidelity analysts. Mark Berube, ChFC, manages accounts for investors who want institutional-grade crypto positioning.',
+    'Quantum Capital applies Metcalfe\'s Law to Ethereum : the same methodology used by Grayscale and Fidelity analysts. Mark Berube, ChFC, manages accounts for investors who want institutional-grade crypto positioning.',
   keywords: [
     'Ethereum investment advisor',
     'Ethereum managed accounts',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: BASE_URL,
     siteName: 'Quantum Capital',
-    title: 'Quantum Capital — Institutional Ethereum Research & Managed Accounts',
+    title: 'Quantum Capital : Institutional Ethereum Research & Managed Accounts',
     description:
       'Ethereum is priced like a speculative asset. It\'s being built like infrastructure. The gap between those two things is where we work.',
     images: [
@@ -67,13 +67,13 @@ export const metadata: Metadata = {
         url: `${BASE_URL}/og-image.png`,
         width: 1200,
         height: 630,
-        alt: 'Quantum Capital — Institutional Ethereum Research',
+        alt: 'Quantum Capital : Institutional Ethereum Research',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Quantum Capital — Institutional Ethereum Research & Managed Accounts',
+    title: 'Quantum Capital : Institutional Ethereum Research & Managed Accounts',
     description:
       'Ethereum is priced like a speculative asset. It\'s being built like infrastructure. The gap between those two things is where we work.',
     images: [`${BASE_URL}/og-image.png`],

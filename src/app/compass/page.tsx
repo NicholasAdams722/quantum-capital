@@ -55,7 +55,7 @@ export default function CompassPage() {
               Price targets from a formula, not a feeling.
             </h1>
             <p className="text-xl max-w-2xl leading-relaxed" style={{ color: '#475569' }}>
-              The Quantum Compass applies Metcalfe&apos;s Law to Ethereum network data — the same
+              The Quantum Compass applies Metcalfe&apos;s Law to Ethereum network data, using the same
               methodology used by Grayscale (ETHE) and Fidelity (FETH) analysts. It produces
               mathematical outputs, not predictions.
             </p>
@@ -82,7 +82,7 @@ export default function CompassPage() {
                   <p><span className="font-bold" style={{ color: '#0f172a' }}>V</span> = Network value (market cap)</p>
                   <p><span className="font-bold" style={{ color: '#0f172a' }}>k</span> = $565 (calibrated April 2026)</p>
                   <p><span className="font-bold" style={{ color: '#0f172a' }}>n</span> = Daily active EOA addresses</p>
-                  <p className="text-xs mt-4" style={{ color: '#94a3b8' }}>Human wallets only — bots excluded from n</p>
+                  <p className="text-xs mt-4" style={{ color: '#94a3b8' }}>Human wallets only. Bots excluded from n.</p>
                 </div>
               </div>
               <p className="text-sm leading-relaxed" style={{ color: '#94a3b8' }}>
@@ -211,7 +211,7 @@ export default function CompassPage() {
               <p className="leading-relaxed mb-6" style={{ color: '#475569' }}>
                 US Treasury Secretary Scott Bessent projected stablecoin market growth from
                 $300B to $3 trillion by end of decade (Senate Banking Committee, February 4,
-                2026 — verifiable public congressional record).
+                2026, verifiable public congressional record).
               </p>
               <p className="leading-relaxed" style={{ color: '#475569' }}>
                 60% of stablecoins settle on Ethereum. Each new dollar adds an active address.

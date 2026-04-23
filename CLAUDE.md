@@ -185,7 +185,7 @@ institutions. The voice earns trust through precision and humility, not hype.
 
 ### Tone principles
 - **Projections, not predictions.** Never "ETH will hit $X." Always "at 1M DAA, the
-  Metcalfe formula outputs $X — the same formula Grayscale and Fidelity use."
+  Metcalfe formula outputs $X, the same formula Grayscale and Fidelity use."
 - **Institutional credibility for a millennial audience.** The research is
   institutional-grade. The delivery is human, direct, and clear. Never condescending.
   Never jargon-first.
@@ -195,6 +195,8 @@ institutions. The voice earns trust through precision and humility, not hype.
 - **Specificity builds trust.** Cite the formula. Name the institution. Give the exact
   number. Vague enthusiasm is the enemy of conversion.
 - **Not investment advice.** Every page. Every time. This is non-negotiable.
+- **No em dashes.** Do not use em dashes (—) anywhere in copy or UI text. Use commas,
+  colons, periods, or rewrite the sentence instead.
 
 ### What the voice is NOT
 - Not a crypto Twitter influencer ("ngmi," "wen moon," etc.)

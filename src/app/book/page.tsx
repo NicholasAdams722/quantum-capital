@@ -19,7 +19,7 @@ const CALENDLY_URL = process.env.NEXT_PUBLIC_CALENDLY_URL
 
 const expectItems = [
   { label: 'What to expect', value: 'A 30-minute conversation about the thesis, your current situation, and whether managed Ethereum exposure fits your portfolio.' },
-  { label: 'Who this is for', value: "Investors with $250K+ in investable assets who want concentrated, thesis-driven positioning — not a 60/40 portfolio." },
+  { label: 'Who this is for', value: "Investors with $250K+ in investable assets who want concentrated, thesis-driven positioning, not a 60/40 portfolio." },
   { label: 'What you get', value: "Mark's direct take on the Quantum Compass targets, current positioning rationale, and a clear next step if it makes sense." },
 ]
 
@@ -47,7 +47,7 @@ export default function BookPage() {
         <section className="py-24 px-6" style={{ background: '#f8fafc' }}>
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
 
-            {/* Left — context */}
+            {/* Left - context */}
             <div>
               <p className="text-xs font-medium uppercase tracking-widest mb-6" style={{ color: '#3b6ee8' }}>
                 About the call
@@ -83,7 +83,7 @@ export default function BookPage() {
               </div>
             </div>
 
-            {/* Right — Calendly embed or fallback */}
+            {/* Right - Calendly embed or fallback */}
             <div className="rounded-sm overflow-hidden bg-white" style={{ border: '1px solid #e2e8f0', minHeight: '500px' }}>
               {CALENDLY_URL ? (
                 <iframe
