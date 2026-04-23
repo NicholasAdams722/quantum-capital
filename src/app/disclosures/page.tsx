@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import ComplianceFooter from '@/components/ComplianceFooter'
+import Divider from '@/components/Divider'
 
 export const metadata: Metadata = {
   title: 'Disclosures',
@@ -69,7 +70,7 @@ export default function DisclosuresPage() {
       <main>
 
         {/* ── Header ── white */}
-        <section className="pt-40 pb-24 px-6 relative overflow-hidden" style={{ borderBottom: '1px solid #e2e8f0' }}>
+        <section className="pt-40 pb-24 px-6 relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: 'radial-gradient(#e2e8f0 1px, transparent 1px)',
             backgroundSize: '24px 24px',
@@ -84,6 +85,8 @@ export default function DisclosuresPage() {
             </p>
           </div>
         </section>
+
+        <Divider />
 
         {/* ── Disclosure content ── */}
         <section className="py-24 px-6">

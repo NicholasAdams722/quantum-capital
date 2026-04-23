@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import ComplianceFooter from '@/components/ComplianceFooter'
+import Divider from '@/components/Divider'
 
 export const metadata: Metadata = {
   title: 'The Investment Thesis',
@@ -33,7 +34,7 @@ export default function ThesisPage() {
       <main>
 
         {/* ── Header ── white hero */}
-        <section className="pt-40 pb-24 px-6 relative overflow-hidden" style={{ borderBottom: '1px solid #e2e8f0' }}>
+        <section className="pt-40 pb-24 px-6 relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: 'radial-gradient(#e2e8f0 1px, transparent 1px)',
             backgroundSize: '24px 24px',
@@ -53,8 +54,10 @@ export default function ThesisPage() {
           </div>
         </section>
 
+        <Divider />
+
         {/* ── Pillar 01 ── light gray */}
-        <section className="py-24 px-6" style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
+        <section className="py-24 px-6" style={{ background: '#f8fafc' }}>
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <div>
               <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>01</p>
@@ -91,8 +94,10 @@ export default function ThesisPage() {
           </div>
         </section>
 
+        <Divider />
+
         {/* ── Pillar 02 ── white */}
-        <section className="py-24 px-6" style={{ borderBottom: '1px solid #e2e8f0' }}>
+        <section className="py-24 px-6">
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <div className="order-2 md:order-1 rounded-sm overflow-hidden" style={{ border: '1px solid #e2e8f0' }}>
               <div className="p-10" style={{ borderBottom: '1px solid #e2e8f0' }}>
@@ -129,8 +134,10 @@ export default function ThesisPage() {
           </div>
         </section>
 
+        <Divider />
+
         {/* ── Pillar 03 ── light gray */}
-        <section className="py-24 px-6" style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
+        <section className="py-24 px-6" style={{ background: '#f8fafc' }}>
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start mb-16">
               <div>
@@ -183,8 +190,10 @@ export default function ThesisPage() {
           </div>
         </section>
 
+        <Divider />
+
         {/* ── Regulatory ── white */}
-        <section className="py-24 px-6" style={{ borderBottom: '1px solid #e2e8f0' }}>
+        <section className="py-24 px-6">
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16">
             <div>
               <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>
@@ -224,8 +233,10 @@ export default function ThesisPage() {
           </div>
         </section>
 
+        <Divider />
+
         {/* ── TAM ── light gray */}
-        <section className="py-24 px-6" style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
+        <section className="py-24 px-6" style={{ background: '#f8fafc' }}>
           <div className="max-w-6xl mx-auto">
             <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>
               Total Addressable Market

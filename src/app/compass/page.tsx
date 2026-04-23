@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import ComplianceFooter from '@/components/ComplianceFooter'
+import Divider from '@/components/Divider'
 import MetcalfeCalculator from '@/components/MetcalfeCalculator'
 
 export const metadata: Metadata = {
@@ -46,7 +47,7 @@ export default function CompassPage() {
       <main>
 
         {/* ── Header ── white with dot grid + formula watermark */}
-        <section className="pt-40 pb-24 px-6 relative overflow-hidden" style={{ borderBottom: '1px solid #e2e8f0' }}>
+        <section className="pt-40 pb-24 px-6 relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: 'radial-gradient(#e2e8f0 1px, transparent 1px)',
             backgroundSize: '24px 24px',
@@ -72,8 +73,10 @@ export default function CompassPage() {
           </div>
         </section>
 
+        <Divider />
+
         {/* ── The Formula ── light gray with cross pattern */}
-        <section className="py-24 px-6 relative overflow-hidden" style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
+        <section className="py-24 px-6 relative overflow-hidden" style={{ background: '#f8fafc' }}>
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16 8v16M8 16h16' stroke='%23e2e8f0' stroke-width='1'/%3E%3C/svg%3E")`,
             backgroundSize: '32px 32px',
@@ -130,8 +133,10 @@ export default function CompassPage() {
           </div>
         </section>
 
+        <Divider />
+
         {/* ── Calculator ── white with graph paper grid */}
-        <section className="py-24 px-6 relative overflow-hidden" style={{ borderBottom: '1px solid #e2e8f0' }}>
+        <section className="py-24 px-6 relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: 'linear-gradient(#f1f5f9 1px, transparent 1px), linear-gradient(90deg, #f1f5f9 1px, transparent 1px)',
             backgroundSize: '40px 40px',
@@ -151,8 +156,10 @@ export default function CompassPage() {
           </div>
         </section>
 
+        <Divider />
+
         {/* ── Price Targets ── light gray */}
-        <section className="py-24 px-6" style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
+        <section className="py-24 px-6" style={{ background: '#f8fafc' }}>
           <div className="max-w-6xl mx-auto">
             <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>
               Price Targets
@@ -216,8 +223,10 @@ export default function CompassPage() {
           </div>
         </section>
 
+        <Divider />
+
         {/* ── Bessent Multiplier ── white */}
-        <section className="py-24 px-6" style={{ borderBottom: '1px solid #e2e8f0' }}>
+        <section className="py-24 px-6">
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
               <p className="text-xs font-medium uppercase tracking-widest mb-4" style={{ color: '#3b6ee8' }}>

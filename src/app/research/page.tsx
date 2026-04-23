@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Nav from '@/components/Nav'
 import ComplianceFooter from '@/components/ComplianceFooter'
+import Divider from '@/components/Divider'
 import { getPosts, formatDate, issueLabel, isGhostConfigured, type GhostPost } from '@/lib/ghost'
 
 export const metadata: Metadata = {
@@ -95,7 +96,7 @@ export default async function ResearchPage() {
       <main>
 
         {/* ── Header ── white */}
-        <section className="pt-40 pb-24 px-6 relative overflow-hidden" style={{ borderBottom: '1px solid #e2e8f0' }}>
+        <section className="pt-40 pb-24 px-6 relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: 'radial-gradient(#e2e8f0 1px, transparent 1px)',
             backgroundSize: '24px 24px',
@@ -126,8 +127,10 @@ export default async function ResearchPage() {
           </div>
         </section>
 
+        <Divider />
+
         {/* ── Issue Grid ── light gray */}
-        <section className="py-24 px-6" style={{ background: '#f8fafc', borderBottom: '1px solid #e2e8f0' }}>
+        <section className="py-24 px-6" style={{ background: '#f8fafc' }}>
           <div className="max-w-6xl mx-auto">
             <p className="text-xs font-medium uppercase tracking-widest mb-8" style={{ color: '#3b6ee8' }}>
               Archive {liveData && <span style={{ color: '#94a3b8' }}>(pulling live from thequantumletter.com)</span>}
@@ -161,8 +164,10 @@ export default async function ResearchPage() {
           </div>
         </section>
 
+        <Divider />
+
         {/* ── Subscribe CTA ── white */}
-        <section className="py-24 px-6" style={{ borderBottom: '1px solid #e2e8f0' }}>
+        <section className="py-24 px-6">
           <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-3xl font-bold tracking-tight mb-4" style={{ color: '#0f172a' }}>

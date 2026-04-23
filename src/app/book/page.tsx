@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import ComplianceFooter from '@/components/ComplianceFooter'
+import Divider from '@/components/Divider'
 
 export const metadata: Metadata = {
   title: 'Book a Consultation',
@@ -31,7 +32,7 @@ export default function BookPage() {
       <main>
 
         {/* ── Header ── white */}
-        <section className="pt-40 pb-16 px-6 relative overflow-hidden" style={{ borderBottom: '1px solid #e2e8f0' }}>
+        <section className="pt-40 pb-16 px-6 relative overflow-hidden">
           <div className="absolute inset-0 pointer-events-none" style={{
             backgroundImage: 'radial-gradient(#e2e8f0 1px, transparent 1px)',
             backgroundSize: '24px 24px',
@@ -46,6 +47,8 @@ export default function BookPage() {
             </p>
           </div>
         </section>
+
+        <Divider />
 
         {/* ── Main content ── light gray */}
         <section className="py-24 px-6" style={{ background: '#f8fafc' }}>
