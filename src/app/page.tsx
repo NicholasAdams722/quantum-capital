@@ -80,24 +80,30 @@ export default async function HomePage() {
 
       <main>
 
-        {/* ── Hero ── white, full-bleed typography with compass anchor */}
+        {/* ── Hero ── dark image background */}
         <section className="pt-40 pb-32 px-6 relative overflow-hidden">
-          <div className="absolute inset-0 pointer-events-none" style={{
-            backgroundImage: 'radial-gradient(#e2e8f0 1px, transparent 1px)',
-            backgroundSize: '24px 24px',
+          {/* Hero image */}
+          <div className="absolute inset-0" style={{
+            backgroundImage: "url('/Assets/Quantum-Hero.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }} />
+          {/* Dark overlay — heavier on left where text sits */}
+          <div className="absolute inset-0" style={{
+            background: 'linear-gradient(105deg, rgba(4,9,26,0.94) 0%, rgba(8,20,46,0.88) 55%, rgba(8,20,46,0.70) 100%)',
           }} />
           <div className="max-w-6xl mx-auto relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-[1fr_360px] gap-12 items-start">
               {/* Left: headline + CTAs */}
               <div>
-                <p className="text-xs font-medium uppercase tracking-widest mb-6" style={{ color: '#3b6ee8' }}>
+                <p className="text-xs font-medium uppercase tracking-widest mb-6" style={{ color: '#6b9bf5' }}>
                   Institutional Ethereum Research
                 </p>
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-8 max-w-2xl" style={{ color: '#0f172a' }}>
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-none mb-8 max-w-2xl text-white">
                   Ethereum is priced like a speculation.{' '}
-                  <span style={{ color: '#3b6ee8' }}>It&apos;s being built like infrastructure.</span>
+                  <span style={{ color: '#6b9bf5' }}>It&apos;s being built like infrastructure.</span>
                 </h1>
-                <p className="text-lg md:text-xl max-w-xl leading-relaxed mb-12" style={{ color: '#475569' }}>
+                <p className="text-lg md:text-xl max-w-xl leading-relaxed mb-12" style={{ color: '#a0aec0' }}>
                   The Quantum Letter teaches you exactly why, through Metcalfe&apos;s Law, on-chain
                   data, and the same valuation methodology used by institutional Ethereum analysts.
                   Free. No hype.
@@ -107,56 +113,60 @@ export default async function HomePage() {
                     href="https://thequantumletter.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center bg-[#3b6ee8] hover:bg-[#1e3a8a] text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
+                    className="inline-flex items-center justify-center bg-[#3b6ee8] hover:bg-[#6b9bf5] text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
                   >
                     Read The Quantum Letter →
                   </a>
                   <Link
                     href="/thesis"
-                    className="inline-flex items-center justify-center border font-semibold px-8 py-4 rounded-full transition-colors text-base"
-                    style={{ borderColor: '#e2e8f0', color: '#475569' }}
+                    className="inline-flex items-center justify-center border font-semibold px-8 py-4 rounded-full transition-colors text-base text-white"
+                    style={{ borderColor: 'rgba(255,255,255,0.2)' }}
                   >
                     Explore the Thesis
                   </Link>
                 </div>
               </div>
 
-              {/* Right: mini Quantum Compass card */}
-              <div className="rounded-sm overflow-hidden" style={{ border: '1px solid #e2e8f0' }}>
-                <div className="px-5 py-4" style={{ background: '#f5f7ff', borderBottom: '1px solid #e2e8f0' }}>
-                  <p className="text-xs font-medium uppercase tracking-widest mb-0.5" style={{ color: '#3b6ee8' }}>
+              {/* Right: mini Quantum Compass card — dark glass */}
+              <div className="rounded-sm overflow-hidden" style={{
+                border: '1px solid rgba(59,110,232,0.35)',
+                background: 'rgba(8,20,46,0.75)',
+                backdropFilter: 'blur(12px)',
+              }}>
+                <div className="px-5 py-4" style={{ borderBottom: '1px solid rgba(59,110,232,0.2)' }}>
+                  <p className="text-xs font-medium uppercase tracking-widest mb-0.5" style={{ color: '#6b9bf5' }}>
                     The Quantum Compass
                   </p>
-                  <p className="text-xs font-mono" style={{ color: '#94a3b8' }}>V = k × n² · k = $565</p>
+                  <p className="text-xs font-mono" style={{ color: '#4a5578' }}>V = k × n² · k = $565</p>
                 </div>
-                <table className="w-full text-left bg-white">
+                <table className="w-full text-left">
                   <thead>
-                    <tr style={{ borderBottom: '1px solid #e2e8f0' }}>
-                      <th className="px-5 py-3 text-xs font-medium uppercase tracking-widest" style={{ color: '#94a3b8' }}>Horizon</th>
-                      <th className="px-5 py-3 text-xs font-medium uppercase tracking-widest" style={{ color: '#94a3b8' }}>DAA</th>
-                      <th className="px-5 py-3 text-xs font-medium uppercase tracking-widest" style={{ color: '#94a3b8' }}>Target</th>
+                    <tr style={{ borderBottom: '1px solid rgba(59,110,232,0.15)' }}>
+                      <th className="px-5 py-3 text-xs font-medium uppercase tracking-widest" style={{ color: '#4a5578' }}>Horizon</th>
+                      <th className="px-5 py-3 text-xs font-medium uppercase tracking-widest" style={{ color: '#4a5578' }}>DAA</th>
+                      <th className="px-5 py-3 text-xs font-medium uppercase tracking-widest" style={{ color: '#4a5578' }}>Target</th>
                     </tr>
                   </thead>
                   <tbody>
                     {compassData.map((row, i) => (
                       <tr
                         key={row.horizon}
-                        style={{ borderBottom: i < compassData.length - 1 ? '1px solid #f1f5f9' : undefined }}
+                        style={{ borderBottom: i < compassData.length - 1 ? '1px solid rgba(59,110,232,0.1)' : undefined }}
                       >
-                        <td className="px-5 py-3 text-sm" style={{ color: row.current ? '#94a3b8' : '#0f172a' }}>
+                        <td className="px-5 py-3 text-sm" style={{ color: row.current ? '#4a5578' : '#a0aec0' }}>
                           {row.horizon}
-                          {row.current && <span className="ml-1.5 text-xs px-1.5 py-0.5 rounded-full" style={{ background: '#f1f5f9', color: '#94a3b8' }}>now</span>}
+                          {row.current && <span className="ml-1.5 text-xs px-1.5 py-0.5 rounded-full" style={{ background: 'rgba(59,110,232,0.15)', color: '#6b9bf5' }}>now</span>}
                         </td>
-                        <td className="px-5 py-3 text-xs font-mono" style={{ color: '#475569' }}>{row.daa}</td>
-                        <td className="px-5 py-3 text-sm font-bold" style={{ color: i === compassData.length - 1 ? '#3b6ee8' : '#0f172a' }}>
+                        <td className="px-5 py-3 text-xs font-mono" style={{ color: '#4a5578' }}>{row.daa}</td>
+                        <td className="px-5 py-3 text-sm font-bold" style={{ color: i === compassData.length - 1 ? '#6b9bf5' : '#ffffff' }}>
                           {row.target}
                         </td>
                       </tr>
                     ))}
                   </tbody>
                 </table>
-                <div className="px-5 py-3" style={{ borderTop: '1px solid #e2e8f0', background: '#f5f7ff' }}>
-                  <Link href="/compass" className="text-xs font-medium transition-colors" style={{ color: '#3b6ee8' }}>
+                <div className="px-5 py-3" style={{ borderTop: '1px solid rgba(59,110,232,0.2)' }}>
+                  <Link href="/compass" className="text-xs font-medium transition-colors" style={{ color: '#6b9bf5' }}>
                     See full analysis + interactive calculator →
                   </Link>
                 </div>
