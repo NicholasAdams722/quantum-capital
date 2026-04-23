@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import ComplianceFooter from '@/components/ComplianceFooter'
+import MetcalfeCalculator from '@/components/MetcalfeCalculator'
 
 export const metadata: Metadata = {
   title: 'The Quantum Compass',
@@ -119,6 +120,23 @@ export default function CompassPage() {
                 The n² relationship is non-linear. Small user gains produce outsized value gains.
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* ── Calculator ── dark navy */}
+        <section className="py-24 px-6" style={{ background: '#04091a' }}>
+          <div className="max-w-6xl mx-auto">
+            <p className="text-xs font-medium uppercase tracking-widest text-[#6b9bf5] mb-4">
+              Try It Yourself
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4 max-w-2xl text-white">
+              Move the slider. Watch the formula update.
+            </h2>
+            <p className="mb-12 max-w-xl" style={{ color: '#a0aec0' }}>
+              Drag the daily active address slider to see how n² makes small user gains
+              produce outsized changes in network value. The non-linearity is the thesis.
+            </p>
+            <MetcalfeCalculator />
           </div>
         </section>
 
